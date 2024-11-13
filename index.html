@@ -20,7 +20,7 @@
             <div class="header-container">
                 <nav class="header-nav">
                     <a href="index.html">
-                        <img class="logo-form" src="images/logo-molfarka.png" alt="logo malfarka">
+                        <img class="logo-form" src="images/logo.png" alt="logo malfarka">
                     </a>
                     <ul class="header-menu">
                         <li><a class="link" href="#traditions-section">Наш бар</a></li>
@@ -199,40 +199,43 @@
                     <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
                     <h1 class="people">Кількість наших магів в Тг </h1>
                     <!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>Останні повідомлення</title>
-</head>
-<body>
-    <h1>Останні 5 повідомлень</h1>
-    <div id="messages"></div>
+                    <html lang="uk">
 
-    <script>
-        // Функція для отримання останніх 5 повідомлень
-        function getMessages() {
-            // Вказуємо URL сервера, де отримуємо останні повідомлення
-            fetch('http://localhost:3000/getMessages')
-                .then(response => response.json())
-                .then(data => {
-                    const messagesDiv = document.getElementById('messages');
-                    messagesDiv.innerHTML = ''; // Очищаємо попередні повідомлення
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Останні повідомлення</title>
+                    </head>
 
-                    // Виводимо кожне з останніх 5 повідомлень
-                    data.forEach((message, index) => {
-                        const messageElement = document.createElement('p');
-                        messageElement.textContent = `${index + 1}. ${message}`;
-                        messagesDiv.appendChild(messageElement);
-                    });
-                })
-                .catch(error => console.error('Error fetching messages:', error));
-        }
+                    <body>
+                        <h1>Останні 5 повідомлень</h1>
+                        <div id="messages"></div>
 
-        // Викликаємо функцію для відображення повідомлень при завантаженні сторінки
-        window.onload = getMessages;
-    </script>
-</body>
-</html>
+                        <script>
+                            // Функція для отримання останніх 5 повідомлень
+                            function getMessages() {
+                                // Вказуємо URL сервера, де отримуємо останні повідомлення
+                                fetch('http://localhost:3000/getMessages')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const messagesDiv = document.getElementById('messages');
+                                        messagesDiv.innerHTML = ''; // Очищаємо попередні повідомлення
+
+                                        // Виводимо кожне з останніх 5 повідомлень
+                                        data.forEach((message, index) => {
+                                            const messageElement = document.createElement('p');
+                                            messageElement.textContent = `${index + 1}. ${message}`;
+                                            messagesDiv.appendChild(messageElement);
+                                        });
+                                    })
+                                    .catch(error => console.error('Error fetching messages:', error));
+                            }
+
+                            // Викликаємо функцію для відображення повідомлень при завантаженні сторінки
+                            window.onload = getMessages;
+                        </script>
+                    </body>
+
+                    </html>
 
 
                     <p class="people"><span id="memberCount"></span></p>
