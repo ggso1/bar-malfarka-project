@@ -113,10 +113,10 @@
                     </button>
                     <ul class="formats-list">
                         <li class="formats-item">
-                            <article class="format-card">
-                                <h3 class="format-title" lang="en">Світанкова сила</h3>
+                            <article class="format-card1">
+                                <h3 class="format-title1" lang="en">Світанкова сила</h3>
                                 <div class="format-text">
-                                    <p>Інгредієнти:</p>
+                                    <p">Інгредієнти:</p>
                                     <p>-5 крапель соку лимона <br>
                                         -3 листочки м’яти<br>
                                         -щіпка подрібненого імбиру<br>
@@ -129,8 +129,8 @@
                             </article>
                         </li>
                         <li class="formats-item">
-                            <article class="format-card">
-                                <h3 class="format-title" lang="en">Зірковий Сон</h3>
+                            <article class="format-card2">
+                                <h3 class="format-title2" lang="en">Зірковий Сон</h3>
                                 <div class="format-text">
                                     <p>Інгредієнти:</p>
                                     <p>-пилок нічної фіалки <br> -крапля чистого меду <br> -щіпка лаванди </p>
@@ -140,8 +140,8 @@
                             </article>
                         </li>
                         <li class="formats-item">
-                            <article class="format-card">
-                                <h3 class="format-title" lang="en">Серце Дракона</h3>
+                            <article class="format-card3">
+                                <h3 class="format-title3" lang="en">Серце Дракона</h3>
                                 <div class="format-text">
                                     <p>Інгредієнти:</p>
                                     <p>-порошок кориці <br> -щіпка червоного перцю <br> -шматочок червоної смородини</p>
@@ -198,59 +198,12 @@
                 <div class="telegram">
                     <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
                     <h1 class="people">Кількість наших магів в Тг </h1>
-                    <!DOCTYPE html>
-                    <html lang="uk">
-
-                    <head>
-                        <meta charset="UTF-8">
-                        <title>Останні повідомлення</title>
-                    </head>
-
-                    <body>
-                        <h1>Останні 5 повідомлень</h1>
-                        <div id="messages"></div>
-
-                        <script>
-                            // Функція для отримання останніх 5 повідомлень
-                            function getMessages() {
-                                // Вказуємо URL сервера, де отримуємо останні повідомлення
-                                fetch('http://localhost:3000/getMessages')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        const messagesDiv = document.getElementById('messages');
-                                        messagesDiv.innerHTML = ''; // Очищаємо попередні повідомлення
-
-                                        // Виводимо кожне з останніх 5 повідомлень
-                                        data.forEach((message, index) => {
-                                            const messageElement = document.createElement('p');
-                                            messageElement.textContent = `${index + 1}. ${message}`;
-                                            messagesDiv.appendChild(messageElement);
-                                        });
-                                    })
-                                    .catch(error => console.error('Error fetching messages:', error));
-                            }
-
-                            // Викликаємо функцію для відображення повідомлень при завантаженні сторінки
-                            window.onload = getMessages;
-                        </script>
-                    </body>
-
-                    </html>
-
-
-                    <p class="people"><span id="memberCount"></span></p>
-
-                </div>
-
-
-                <div id="messages"></div>
-
-
+                    
 
                 <div class="feedback-form">
                     <h2>Напишіть своє пророцтво про бар</h2>
                     <form action="#" method="post">
-                        <label for="feedback"> Ваше мудре слово</label>
+                        <label for="feedback" class="word"> Ваше мудре слово надішлеться в наш телеграм</label>
                         <textarea id="feedback" name="feedback" placeholder="" rows="5" required></textarea>
 
                         <button type="submit" class="sendtg-btn">Надіслати пророцтво</button>
@@ -260,6 +213,14 @@
             </div>
         </section>
 
+        <section class="popularcom">
+            <h2>Наші найвідоміші коментарі</h2>
+            <p class="coment">fffffffffffffff</p>
+            <p class="coment">fffffffffffff</p>
+            <p class="coment">ffffffffff</p>
+        </section>
+       
+
     </main>
     <footer class="footer">
         <div class="container">
@@ -267,7 +228,7 @@
                 <nav class="footer-nav">
                     <div class="footer-logo">
                         <a class="footer-logo" href="#">
-                            <img class="logo-form" src="./images/logo-molfarka.png" alt="Логотип сучасної пекарні">
+                            <img class="logo-form" src="./images/logo.png" alt="Логотип сучасної пекарні">
                         </a>
                     </div>
                     <ul class="footer-menu">
