@@ -29,7 +29,13 @@
                         <li><a class="link" href="#contacts-section">Визвати відьму</a></li>
                     </ul>
                 </nav>
-                <button class="button modal-btn-open" type="button">Визвати відьму</button>
+                <button class="header_button button modal-btn-open" type="button">Визвати відьму</button>
+                <button class="header-burger" type="button">
+                    <svg width="24" height="24">
+                        <use href="./images/menu.svg"></use>
+                    </svg>
+                </button>
+
             </div>
         </div>
     </header>
@@ -117,14 +123,15 @@
                                 <h3 class="format-title1" lang="en">Світанкова сила</h3>
                                 <div class="format-text">
                                     <p">Інгредієнти:</p>
-                                    <p>-5 крапель соку лимона <br>
-                                        -3 листочки м’яти<br>
-                                        -щіпка подрібненого імбиру<br>
-                                        -пів склянки крижаної води </p>
-                                    <p>Дія: це зілля заряджає енергією на початку дня та підвищує концентрацію. Лимон і
-                                        м'ята тонізують, а імбир покращує
-                                        кровообіг, що дає прилив енергії.
-                                    </p>
+                                        <p>-5 крапель соку лимона <br>
+                                            -3 листочки м’яти<br>
+                                            -щіпка подрібненого імбиру<br>
+                                            -пів склянки крижаної води </p>
+                                        <p>Дія: це зілля заряджає енергією на початку дня та підвищує концентрацію.
+                                            Лимон і
+                                            м'ята тонізують, а імбир покращує
+                                            кровообіг, що дає прилив енергії.
+                                        </p>
                                 </div>
                             </article>
                         </li>
@@ -171,12 +178,13 @@
             <div class="mif-us">
                 <h2>Наш бар</h2>
                 <p>
-                    <span class="mif-us">Про нас</span> Наш бар — це місце, де оживає магія Карпат. Вдохновлені легендою
-                    про мольфарів — стародавніх
-                    знахарів, що володіли
-                    потужними знаннями про природу та магію, ми створили атмосферу, де кожен напій приносить не
-                    тільки смак, а й частинку
-                    цієї карпатської містики.
+                    <span class="mif-us"> Наш бар — це місце, де оживає магія Карпат. Вдохновлені легендою
+                        про мольфарів — стародавніх
+                        знахарів, що володіли
+                        потужними знаннями про природу та магію, ми створили атмосферу, де кожен напій приносить не
+                        тільки смак, а й частинку
+                        цієї карпатської містики.
+                    </span>
                 </p>
                 <p class="maf-us">
                     За легендою, мольфари створили особливий еліксир, що поєднував силу гір, аромат
@@ -198,28 +206,30 @@
                 <div class="telegram">
                     <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
                     <h1 class="people">Кількість наших магів в Тг </h1>
-                    
+                    <p class="tgsulka"> Наша група- <a href="https://t.me/+BYX5H_16yYY4NmRi">https://t.me/+BYX5H_16yYY4NmRi</a></p>
 
-                <div class="feedback-form">
-                    <h2>Напишіть своє пророцтво про бар</h2>
-                    <form action="#" method="post">
-                        <label for="feedback" class="word"> Ваше мудре слово надішлеться в наш телеграм</label>
-                        <textarea id="feedback" name="feedback" placeholder="" rows="5" required></textarea>
 
-                        <button type="submit" class="sendtg-btn">Надіслати пророцтво</button>
-                        <h3 class="feedback-sent"></h3>
-                    </form>
+
+                    <div class="feedback-form">
+                        <h2>Напишіть своє пророцтво про бар</h2>
+                        <form action="#" method="post">
+                            <label for="feedback" class="word"> Ваше мудре слово надішлеться в наш телеграм</label>
+                            <textarea id="feedback" name="feedback" placeholder="" rows="5" required></textarea>
+
+                            <button type="submit" class="sendtg-btn">Надіслати пророцтво</button>
+                            <h3 class="feedback-sent"></h3>
+                        </form>
+                    </div>
                 </div>
-            </div>
         </section>
 
-        <section class="popularcom">
-            <h2>Наші найвідоміші коментарі</h2>
+        <!-- <section class="popularcom">
+            <h2 class="comentheader">Наші найвідоміші коментарі</h2>
             <p class="coment">fffffffffffffff</p>
             <p class="coment">fffffffffffff</p>
-            <p class="coment">ffffffffff</p>
+            <p class="coment">ffffffffff</p> -->
         </section>
-       
+
 
     </main>
     <footer class="footer">
@@ -305,7 +315,9 @@
     <script src="./js/modal.js"></script>
 
     <script src="./js/tg.js"></script>
+
     <script src="./js/people.js"></script>
+
     <script src="./js/message.js"></script>
 </body>
 

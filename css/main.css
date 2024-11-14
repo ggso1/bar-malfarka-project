@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
   --color-primary-dark: #0c1c12;
   --color-primary-light: #cad1bb;
@@ -5,7 +7,12 @@
   --color-brand-light: #ec4b4b;
   --color-brand-normal-dark: #562121;
   --color-secondary-dark: #2d6322;
+
 }
+
+
+
+
 
 /* Base */
 body {
@@ -110,16 +117,41 @@ ul {
 }
 
 .header-menu {
-  display: flex;
-  gap: 64px;
-  flex-grow: 1;
-  justify-content: center;
+  display: none;
+
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
+  }
 }
+
+.header_button {
+  display: none;
+
+  @media screen and (min-width: 1280px) {
+    display: block;
+  }
+}
+
+.header-burger {
+  width: 24px;
+  height: 24px;
+    padding: 0;
+  fill: var(--color-brand-light);
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+}
+
 
 /* Hero section */
 .hero-section {
   padding: 272px 0;
-  background-image: url("../images/fon\ header.png");
+  background-image: url("../images/fon header.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -128,9 +160,14 @@ ul {
   margin-bottom: 0;
   color: var(--color-primary-light);
   text-align: center;
-  font-size: 128px;
+  font-size: 67px;
   font-weight: 900;
   font-style: italic;
+
+  @media screen and (min-width: 769px) {
+    font-size: 128px;
+    line-height: 1.5;
+  }
 }
 
 .hero-title .accent {
@@ -182,6 +219,7 @@ ul {
 
 .traditions-content {
   max-width: 710px;
+
 }
 
 .traditions-title {
@@ -287,12 +325,9 @@ ul {
 .format-card1 {
   height: 444px;
   padding: 24px;
-  background-image: url('../images/format1.jpg');
-  /* Встановлює фон для картки */
+  background-image: url("../images/format1.jpg");
   background-size: cover;
-  /* Фон покриває весь контейнер */
   background-position: center;
-  /* Центрує фон */
   border: 1px solid lightgray;
   border-radius: 16px;
   transition: transform 0.3s;
@@ -301,12 +336,9 @@ ul {
 .format-card2 {
   height: 444px;
   padding: 24px;
-  background-image: url('../images/format2.webp');
-  /* Встановлює фон для картки */
+  background-image: url("../images/format2.webp");
   background-size: cover;
-  /* Фон покриває весь контейнер */
   background-position: center;
-  /* Центрує фон */
   border: 1px solid lightgray;
   border-radius: 16px;
   transition: transform 0.3s;
@@ -315,12 +347,9 @@ ul {
 .format-card3 {
   height: 444px;
   padding: 24px;
-  background-image: url('../images/format3.jpg');
-  /* Встановлює фон для картки */
+  background-image: url("../images/format3.jpg");
   background-size: cover;
-  /* Фон покриває весь контейнер */
   background-position: center;
-  /* Центрує фон */
   border: 1px solid lightgray;
   border-radius: 16px;
   transition: transform 0.3s;
@@ -339,9 +368,8 @@ ul {
   font-size: 14px;
   font-weight: 300;
   color: #1a0e0e;
-  text-shadow: 0px 2px 5px rgb(241 241 241);
+  text-shadow: 0px 2px 5px rgb(241, 241, 241);
 }
-
 
 /* Carousel */
 .carousel-button {
@@ -401,12 +429,15 @@ ul {
 
 .mif-us {
   margin-left: 20px;
+  margin-left: 135px;
+  margin-right: 135px;
 }
 
 .background-mif {
   margin-bottom: 100px;
   width: 350px;
   height: 290px;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
@@ -420,8 +451,6 @@ ul {
   text-align: center;
 }
 
-
-
 .feedback-form {
   margin-left: auto;
   background-color: #fff;
@@ -431,14 +460,11 @@ ul {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-
 }
 
 .word {
   font-size: 14px;
 }
-
-
 
 .feedback-form h2 {
   margin-left: auto;
@@ -481,12 +507,19 @@ ul {
 }
 
 .popularcom {
-   margin-top: -100px;
+  margin-top: -100px;
   margin-bottom: 90px;
+}
+
+.comentheader {
+  margin-left: 135px;
+  margin-right: 135px;
 }
 
 .coment {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 135px;
+  margin-right: 135px;
 }
 
 /* telegram */
@@ -494,7 +527,7 @@ ul {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  box-shadow: 0 0 10px 5px rgb(125 4 4 / 73%);
+  box-shadow: 0 0 10px 5px rgba(125, 4, 4, 0.73);
 }
 
 .container-row {
@@ -507,6 +540,9 @@ ul {
   margin-right: 100px;
 }
 
+.tgsulka {
+  
+}
 
 /* Footer */
 .footer {
@@ -576,7 +612,6 @@ ul {
 
 .address-icon {
   fill: var(--color-primary-light);
-
 }
 
 .address-copyright {
@@ -692,6 +727,5 @@ ul {
 .footer-masiap {
   text-align: center;
 }
-
 
 /*# sourceMappingURL=main.css.map */

@@ -12,15 +12,15 @@ sendBtn.addEventListener('click', (event) => {
     // Encode the message text for URL
     const encodedText = encodeURIComponent(textToSend);
     const botID = '7643771807'
-    const groupID='-4545119175'
-    const testGroupID='-1002472181316'
+    const groupID = '-4545119175'
+    const testGroupID = '-1002472181316'
 
 
     // Define the Telegram Bot API URL with chat_id and encoded message text
 
     const url = `https://api.telegram.org/bot${botID}:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc/sendMessage?chat_id=${testGroupID}&text=${encodedText}`;
-    
-    
+
+
     // Use fetch to send the HTTP GET request
     fetch(url)
         .then(response => {
@@ -33,12 +33,12 @@ sendBtn.addEventListener('click', (event) => {
             console.log("Message sent:", data);
             // Clear the textarea after the message is sent
             feedbackInput.value = '';
-            feedbackSent.innerHTML='Пророцтво збулось!'
+            feedbackSent.innerHTML = 'Пророцтво збулось!'
         })
         .catch(error => console.error("Error sending message:", error));
 });
 
 feedbackInput.addEventListener('click', (event) => {
-    feedbackSent.innerHTML=''
+    feedbackSent.innerHTML = ''
 
 });
