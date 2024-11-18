@@ -18,7 +18,7 @@ sendBtn.addEventListener('click', (event) => {
 
     // Define the Telegram Bot API URL with chat_id and encoded message text
 
-    const url = `https://api.telegram.org/bot${botID}:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc/sendMessage?chat_id=${testGroupID}&text=${encodedText}`;
+    const url = `https://api.telegram.org/bot${botID}:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc/sendMessage?chat_id=${groupID}&text=${encodedText}`;
 
 
     // Use fetch to send the HTTP GET request

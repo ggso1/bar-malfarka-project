@@ -200,28 +200,28 @@
             </div>
         </section>
         <section class="AAAA">
-
             <h2 class="hmagic">Приєднуйтеся до нашого магічного кола ♡</h2>
             <div class="container-row">
                 <div class="telegram">
                     <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
-                    <h1 class="people">Кількість наших магів в Тг </h1>
-                    <p class="tgsulka"> Наша група- <a href="https://t.me/+BYX5H_16yYY4NmRi">https://t.me/+BYX5H_16yYY4NmRi</a></p>
-
-
-
+                    <h1 class="people">Кількість наших магів в Тг: <span id="people-count"></span></h1>
+                    <p class="tgsulka"> Наша група- <a href="https://t.me/+BYX5H_16yYY4NmRi">https://t.me/+BYX5H_16yYY4NmRi</a>
+                    </p>
+        
                     <div class="feedback-form">
                         <h2>Напишіть своє пророцтво про бар</h2>
-                        <form action="#" method="post">
-                            <label for="feedback" class="word"> Ваше мудре слово надішлеться в наш телеграм</label>
-                            <textarea id="feedback" name="feedback" placeholder="" rows="5" required></textarea>
-
+                        <form id="comment-form">
+                            <label for="feedback" class="word">Ваше мудре слово:</label>
+                            <textarea id="feedback" name="feedback" rows="5" required></textarea>
                             <button type="submit" class="sendtg-btn">Надіслати пророцтво</button>
-                            <h3 class="feedback-sent"></h3>
                         </form>
+                        <h3 class="feedback-sent">Коментарі наших магів:</h3>
+                        <ul id="comments-list"></ul>
                     </div>
                 </div>
+            </div>
         </section>
+
 
         <!-- <section class="popularcom">
             <h2 class="comentheader">Наші найвідоміші коментарі</h2>
@@ -318,7 +318,6 @@
 
     <script src="./js/people.js"></script>
 
-    <script src="./js/message.js"></script>
 </body>
 
 </html>
