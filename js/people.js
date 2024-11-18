@@ -6,6 +6,7 @@ const testGroupID = '-1002472181316'
 
 // URL для запиту до API
 const url = `https://api.telegram.org/bot${token}/getChatMemberCount?chat_id=${chatId}`;
+const updatesUrl = `https://api.telegram.org/bot${token}/getUpdates`;
 
 function getMemberCount() {
     fetch(url)
@@ -24,5 +25,31 @@ function getMemberCount() {
         });
 }
 
+
+// // function getUpdates() {
+// //     fetch(updatesUrl)
+// //         .then(response => response.json())
+// //         .then(data => {
+// //             let element = document.querySelector(".popularcom")
+// //             data.result.forEach(update => {
+// //                 if (update.message && update.message.text) {
+// //                     element.innerHTML += ` <p class="coment">${update.message.text}</p>`;
+// //                 }
+
+//             });
+//             // if (hasNewMessages == False) {
+//             //     element.innerHTML += ` <p class="coment">Немає останніх к</p>`;
+//             // }
+//             // 
+//         })
+//         .catch(error => {
+//             console.error('Error fetching member count:', error);
+//             document.querySelector(".popularcom").textContent += 'Не вдалося отримати дані';
+//         });
+// }
+
+
 // Виклик функції для отримання кількості учасників
 getMemberCount();
+
+getUpdates();
