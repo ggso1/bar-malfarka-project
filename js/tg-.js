@@ -1,43 +1,38 @@
 // Ваш токен для бота
-const token = '7643771807:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc';  // Замість цього вставте ваш токен
+//const token = '7643771807:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc'; // Вставте ваш токен
 // ID чату або групи
-const chatId = '-1002474744467'; // Замість цього вставте username або chat_id групи
-const testGroupID = '-1002472181316'
+//const chatId = '-4545119175'; // Вставте ID вашої групи
+const feedbackSent = document.getElementById('feedback-sent'); // Статус надсилання
 
-// URL для запиту до API
-const urlPeople = `https://api.telegram.org/bot${token}/getChatMemberCount?chat_id=${chatId}`;
+// URL для запиту до API для отримання кількості учасників
+const url = `https://api.telegram.org/bot${token}/getChatMembersCount?chat_id=${chatId}`;
 
-
-// https://api.telegram.org/bot7643771807:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc/getChatMemberCount?chat_id=-4545119175`
-
-function getMemberCount() {
-    fetch(urlPeople)
+// Функція для отримання кількості учасників
+function getPeopleCount() {
+    fetch(url)
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
                 // Вивести кількість учасників
-                console.log(data.result)
                 document.getElementById('peopleCount').textContent = data.result;
             } else {
                 document.getElementById('peopleCount').textContent = 'Помилка при отриманні даних';
+                console.error('Помилка:', data);
             }
         })
         .catch(error => {
-            console.error('Error fetching member count:', error);
+            console.error('Помилка під час отримання кількості людей:', error);
             document.getElementById('peopleCount').textContent = 'Не вдалося отримати дані';
         });
 }
 
-getMemberCount();
-
-
-
-
+// Викликаємо функцію для отримання кількості людей при завантаженні сторінки
+window.onload = getPeopleCount;
 
 // Обробник для відправки коментаря через Telegram-бота
-const feedbackInput = document.getElementById('feedback');
 const sendBtn = document.querySelector('.sendtg-btn');
-const feedbackSent = document.getElementById('feedback-sent'); // Статус надсилання
+const feedbackInput = document.getElementById('feedback');
+
 // Обробник для кнопки "Надіслати"
 sendBtn.addEventListener('click', (event) => {
     // Запобігаємо стандартному відправленню форми

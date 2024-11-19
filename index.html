@@ -199,38 +199,35 @@
                 <img class="background-mif" src="./images/ukp.jpg" alt="Мольфарка в червоному кольорі">
             </div>
         </section>
+
+
         <section class="AAAA">
             <h2 class="hmagic">Приєднуйтеся до нашого магічного кола ♡</h2>
             <div class="container-row">
                 <div class="telegram">
-                    <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
-                    <h1 class="people">Кількість наших магів в Тг: <span id="people-count"></span></h1>
-                    <p class="tgsulka"> Наша група- <a
-                            href="https://t.me/+BYX5H_16yYY4NmRi">https://t.me/+BYX5H_16yYY4NmRi</a>
-                    </p>
+                    <div>
+                        <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
+                        <h2 class="people">Кількість наших магів в групі Telegram </h2>
+                        <h2><a href="https://t.me/+BYX5H_16yYY4NmRi" target="_blank">reviews Molfarka</a></h2>
+                           <span id="peopleCount"></span>
+
+                    </div>
 
                     <div class="feedback-form">
-                        <h2>Напишіть своє пророцтво про бар</h2>
-                        <form id="comment-form">
-                            <label for="feedback" class="word">Ваше мудре слово:</label>
-                            <textarea id="feedback" name="feedback" rows="5" required></textarea>
-                            <button type="submit" class="sendtg-btn">Надіслати пророцтво</button>
+                        <h2>Напишіть своє пророцтво</h2>
+                        <form id="feedback-form">
+                            <label for="feedback">Ваше мудре слово:</label>
+                            <textarea id="feedback" name="feedback" placeholder="Це місце створено з магією!" rows="5"
+                                required></textarea>
+                            <button type="submit" class="sendtg-btn">Надіслати</button>
                         </form>
-                        <h3 class="feedback-sent">Надіслано в наш Тг</h3>
-                        <ul id="comments-list"></ul>
+                        <p id="feedback-sent" class="hidden">Пророцтво успішно надіслано!</p>
+                        <p class="tgsulka">Наша група - <a href="https://t.me/+BYX5H_16yYY4NmRi"
+                                target="_blank">https://t.me/+BYX5H_16yYY4NmRi</a></p>
                     </div>
                 </div>
             </div>
         </section>
-
-
-<!-- 
-        <section class="popularcom">
-            <h2 class="comentheader">Наші найвідоміші коментарі</h2>
-            <p class="coment">fffffffffffffff</p>
-            <p class="coment">fffffffffffff</p>
-            <p class="coment">ffffffffff</p> -->
-        </section> 
 
 
     </main>
@@ -316,7 +313,7 @@
     </div>
     <script src="./js/modal.js"></script>
 
-    <script src="./js/tg.js"></script>
+    <!-- <script src="./js/tg.js"></script> -->
 
     <script src="./js/people.js"></script>
 
