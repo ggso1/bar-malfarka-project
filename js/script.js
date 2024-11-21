@@ -11,13 +11,13 @@ window.onload = function () {
     }
 
     // Запускаємо таймер для додавання 3 сонечок кожні 30 секунд
-    setInterval(addSonechka, 10000);
+    setInterval(addSonechka, 20000);
 };
 
 // Функція для додавання 3 сонечок кожні 30 секунд
 function addSonechka() {
     let currentValue = parseInt(localStorage.getItem('counter'));
-    currentValue += 6; // Додаємо 3 сонечка
+    currentValue += 5; // Додаємо 3 сонечка
     localStorage.setItem('counter', currentValue); // Оновлюємо значення в localStorage
     document.getElementById("counter").innerText = currentValue; // Оновлюємо на сторінці
 }
