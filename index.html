@@ -30,15 +30,12 @@
                     </ul>
                 </nav>
                 <button class="header_button button modal-btn-open" type="button">Викликати відьму</button>
-                <button class="header-burger" type="button">
-                    <svg width="24" height="24">
-                        <use href="./images/menu.svg"></use>
-                    </svg>
-                </button>
+                
 
             </div>
         </div>
     </header>
+
     <main>
         <section class="hero-section">
             <div class="container">
@@ -201,6 +198,63 @@
         </section>
 
 
+       
+
+        <section class="game">
+            <div class="coktail">
+                <h1>Магічний коктейль</h1>
+                <div class="zilia">
+                    <div>
+                        <p class="texpr" for="zillia1">Зілля 1</p>
+                        <img class="png" src="./image/1.jfif" alt="">
+                        <div class="buttons-game">
+                            <button onclick="changeValue('zillia1', -1)">-</button>
+                            <input type="text" id="zillia1" value="1" readonly>
+                            <button onclick="changeValue('zillia1', 1)">+</button>
+                        </div>
+                    </div>
+            
+                    <div>
+                        <p class="texpr" for="zillia2">Зілля 2</p>
+                        <img class="png" src="./image/2.jfif" alt="">
+                        <div class="buttons-game">
+                            <button onclick="changeValue('zillia2', -1)">-</button>
+                            <input type="text" id="zillia2" value="1" readonly>
+                            <button onclick="changeValue('zillia2', 1)">+</button>
+                        </div>
+                    </div>
+            
+                    <div>
+                        <p class="texpr" for="zillia3">Зілля 3</p>
+                        <img class="png" src="./image/3.jfif" alt="">
+                        <div class="buttons-game">
+                            <button onclick="changeValue('zillia3', -1)">-</button>
+                            <input type="text" id="zillia3" value="1" readonly>
+                            <button onclick="changeValue('zillia3', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content click-buttons">
+                    <button onclick="mix()" id="mix">Замовити у Мальфарки</button>
+                    <button onclick="mixRandom()" id="mix">Випадковий коктейль</button>
+                </div>
+                <div class="result">
+                    <div id="image-container">
+                        <img id="display-image" src="./img/0.jfif" alt="Image" />
+                    </div>
+            
+                    <div class="info">
+                        <h2 id="name">Коктейль</h2>
+                        <h3 id="description">Опис</h3>
+                        <p id="full_description">Детальний Опис</p>
+                        <h3 id="price">Ціна</h3>
+                    </div>
+            
+                </div>
+            
+            </div>
+        </section>
+
         <section class="AAAA">
             <h2 class="hmagic">Приєднуйтеся до нашого магічного кола ♡</h2>
             <div class="container-row">
@@ -209,15 +263,15 @@
                         <img class="tgfoto" src="./images/tgfoto.png" alt="tgfoto">
                         <h2 class="people">Кількість наших магів в групі Telegram </h2>
                         <h2><a href="https://t.me/+BYX5H_16yYY4NmRi" target="_blank">reviews Molfarka</a></h2>
-                           <span id="peopleCount"></span>
-
+                        <span id="peopleCount"></span>
+        
                     </div>
-
+        
                     <div class="feedback-form">
                         <h2>Напишіть своє пророцтво</h2>
                         <form id="feedback-form">
                             <label for="feedback">Ваше мудре слово:</label>
-                            <textarea id="feedback" name="feedback" placeholder="Це місце створено з магією!" rows="5"
+                            <textarea id="feedback" name="feedback" placeholder="" rows="5"
                                 required></textarea>
                             <button type="submit" class="sendtg-btn">Надіслати</button>
                         </form>
@@ -228,6 +282,12 @@
                 </div>
             </div>
         </section>
+<!-- 
+        <section>
+            <div id="counter-container">
+                <p>☀️: <span id="counter">0</span></p>
+            </div>
+        </section> -->
 
 
     </main>
@@ -316,6 +376,10 @@
     <!-- <script src="./js/tg.js"></script> -->
 
     <script src="./js/people.js"></script>
+
+    <script src="./js/prob.js"></script>
+
+    <!-- <script src="./js/script.js"></script> -->
 
 </body>
 
