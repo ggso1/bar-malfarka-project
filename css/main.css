@@ -626,6 +626,47 @@ button {
   z-index: 1000;
 }
 
+/* fireflies */
+ .container-fir {
+   text-align: center;
+   z-index: 10;
+ }
+
+ .firefly {
+   position: absolute;
+   background-color: rgba(255, 255, 255, 0.8);
+   border-radius: 50%;
+   opacity: 0;
+   animation: fly 10s infinite ease-in-out;
+ }
+
+ @keyframes fly {
+   0% {
+     transform: translateY(0) translateX(0);
+     opacity: 0.6;
+   }
+
+   25% {
+     transform: translateY(-50px) translateX(100px);
+     opacity: 0.8;
+   }
+
+   50% {
+     transform: translateY(0) translateX(200px);
+     opacity: 0.6;
+   }
+
+   75% {
+     transform: translateY(50px) translateX(300px);
+     opacity: 0.8;
+   }
+
+   100% {
+     transform: translateY(0) translateX(400px);
+     opacity: 0.6;
+   }
+ }
+
 /* Footer */
 .footer {
   padding: 32px 0;
