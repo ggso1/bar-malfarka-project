@@ -150,7 +150,7 @@ ul {
 }
 
 .hero-title .accent {
-  color: var(--color-brand-normal);
+  color: #f5ebebe0;
 }
 
 /* Advantages section */
@@ -573,9 +573,9 @@ ul {
   border-radius: 15px;
 }
 
-input[type="text"] {
-  width: 50px;
-  text-align: center;
+input[type="text-game"] {
+      width: 35px;
+        text-align: center;
 }
 
 button {
@@ -732,9 +732,19 @@ button {
 }
 
 .modal-btn-close {
+  background: transparent;
+  border: none;
+  font-size: 50px;
+  color: #333;
+  cursor: pointer;
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-btn-close:hover {
+  color: red;
+  /* Можна змінити колір при наведенні */
 }
 
 /*Form*/
