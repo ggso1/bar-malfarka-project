@@ -22,4 +22,5 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let i = 0; i < numberOfFireflies; i++) {
     createFirefly();
   }
+  
 });
