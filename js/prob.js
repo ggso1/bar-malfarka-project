@@ -264,17 +264,27 @@ window.onload = function () {
   }
   document.getElementById("counter").innerText = localStorage.getItem('counter');
 
-  // Запускаємо інтервал для додавання 5 сонечок кожні 20 секунд
+  // Запуск інтервалу для додавання 5 сонечок кожні 20 секунд
   setInterval(addSonechka, 20000);
 };
 
 // Функція для додавання 5 сонечок до лічильника
 function addSonechka() {
-  let currentValue = parseInt(localStorage.getItem('counter')); // Отримуємо поточний баланс
+  let currentValue = parseInt(localStorage.getItem('counter') || '0'); // Отримуємо поточний баланс
   currentValue += 5; // Додаємо 5 сонечок
-  localStorage.setItem('counter', currentValue); // Оновлюємо значення в localStorage
-  document.getElementById("counter").innerText = currentValue; // Оновлюємо лічильник на сторінці
+  localStorage.setItem('counter', currentValue.toString()); // Оновлюємо значення в localStorage
+  updateCounterDisplay(); // Оновлюємо відображення на сторінці
 }
+// Оновлення значення лічильника на сторінці
+function updateCounterDisplay() {
+  const counterElement = document.getElementById("counter");
+  if (counterElement) {
+    counterElement.innerText = localStorage.getItem('counter');
+  } else {
+    console.error('Елемент #counter не знайдено на сторінці.');
+  }
+}
+
 
 // Основна функція для змішування коктейлю вручну
 function mix() {
