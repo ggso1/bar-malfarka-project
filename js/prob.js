@@ -161,7 +161,6 @@ function updateCounterDisplay() {
   document.getElementById("counter").innerText = localStorage.getItem('counter');
 }
 
-
 // Основна функція для змішування коктейлю вручну
 function mix() {
   const input1 = document.getElementById("zillia1").value;
@@ -171,7 +170,7 @@ function mix() {
 
   if (canAffordCocktail(code)) {
     animateImages(code);
-    deductSonechka(code);  // Віднімаємо сонечка після успішного замовлення
+    deductSonechka(code); // Віднімаємо сонечка після успішного замовлення
   } else {
     alert("Недостатньо ☀️ для замовлення цієї мішанки!");
   }
@@ -183,7 +182,6 @@ function changeValue(id, delta) {
   let currentValue = parseInt(input.value) || 0; // Отримуємо поточне значення
   currentValue += delta; // Змінюємо значення на +1 або -1
 
-  // Перевірка, щоб значення не виходило за межі 1, 2 або 3
   if (currentValue < 1) {
     currentValue = 1;
   } else if (currentValue > 3) {
@@ -196,14 +194,12 @@ function changeValue(id, delta) {
 // Функція для валідації введеного значення
 function validateInput(id) {
   const input = document.getElementById(id);
-  let value = input.value;
+  const value = input.value.trim();
 
-  // Якщо введене значення не є 1, 2 або 3, то очищаємо поле
-  if (value !== '1' && value !== '2' && value !== '3') {
+  if (!['1', '2', '3'].includes(value)) {
     input.value = '';
   }
 }
-
 
 // Функція для випадкового змішування коктейлю
 function mixRandom() {
@@ -220,7 +216,7 @@ function mixRandom() {
 
   if (canAffordCocktail(code)) {
     animateImages(code);
-    deductSonechka(code);  // Віднімаємо сонечка після успішного замовлення
+    deductSonechka(code);
   } else {
     alert("Недостатньо ☀️ для замовлення цієї мішанки!");
   }
@@ -230,9 +226,9 @@ function mixRandom() {
 function canAffordCocktail(code) {
   const cocktail = data.find(item => item.code === code);
   if (cocktail) {
-    const price = parseInt(cocktail.price.replace(' ☀️', '')); // Витягуємо ціну
-    const currentValue = parseInt(localStorage.getItem('counter') || '0'); // Отримуємо поточний баланс
-    return currentValue >= price; // Перевіряємо баланс
+    const price = parseInt(cocktail.price.split(' ')[0]) || 0;
+    const currentValue = parseInt(localStorage.getItem('counter')) || 0;
+    return currentValue >= price;
   }
   return false;
 }
@@ -241,12 +237,12 @@ function canAffordCocktail(code) {
 function deductSonechka(code) {
   const cocktail = data.find(item => item.code === code);
   if (cocktail) {
-    const price = parseInt(cocktail.price.replace(' ☀️', '')); // Витягуємо ціну коктейлю
-    let currentValue = parseInt(localStorage.getItem('counter') || '0');
+    const price = parseInt(cocktail.price.split(' ')[0]) || 0;
+    let currentValue = parseInt(localStorage.getItem('counter')) || 0;
 
-    currentValue -= price;  // Віднімаємо ціну від поточного балансу
-    localStorage.setItem('counter', currentValue);  // Оновлюємо баланс у localStorage
-    document.getElementById("counter").innerText = currentValue;  // Оновлюємо відображення балансу
+    currentValue -= price; // Віднімаємо ціну від поточного балансу
+    localStorage.setItem('counter', currentValue); // Оновлюємо баланс у localStorage
+    updateCounterDisplay(); // Оновлюємо відображення балансу
   }
 }
 
@@ -254,8 +250,8 @@ function deductSonechka(code) {
 function animateImages(targetCode) {
   const imageElement = document.getElementById("display-image");
   let currentIndex = 0;
-  let speed = 10;
-  let slowdownStart = 15;
+  let speed = 100; // Початкова швидкість
+  let slowdownStart = 15; // Кількість ітерацій до сповільнення
 
   const frames = 27;
   const images = [];
@@ -277,9 +273,8 @@ function animateImages(targetCode) {
 
     if (slowdownStart > 0) {
       slowdownStart--;
-      speed += 10;
+      speed += 10; // Сповільнення
     } else if (currentIndex === targetIndex) {
-      imageElement.src = images[currentIndex];
       choosecoctail(targetCode);
       return;
     }
@@ -295,17 +290,14 @@ function choosecoctail(code) {
   document.getElementById("full_description").innerText = "Детальний Опис";
   document.getElementById("price").innerText = "Ціна";
 
-  data.forEach((element) => {
-    if (element.code == code) {
-      document.getElementById("name").innerText = element.name;
-      document.getElementById("description").innerText = element.description;
-      document.getElementById("full_description").innerText = element.ful_description;
-      document.getElementById("price").innerText = element.price;
+  const cocktail = data.find(item => item.code === code);
+  if (cocktail) {
+    document.getElementById("name").innerText = cocktail.name;
+    document.getElementById("description").innerText = cocktail.description;
+    document.getElementById("full_description").innerText = cocktail.ful_description;
+    document.getElementById("price").innerText = cocktail.price;
 
-      const imageElement = document.getElementById("display-image");
-      imageElement.src = `img/${element.img}`;
-    }
-  });
+    const imageElement = document.getElementById("display-image");
+    imageElement.src = `img/${cocktail.img}`;
+  }
 }
-
-

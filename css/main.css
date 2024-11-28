@@ -637,64 +637,52 @@ button {
 }
 
 /* Sun */
-.bodysun {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  display: flex;
-  align-items: flex-start;
-  /* Вирівнювання по верхньому краю */
-}
-
 .containersun {
   position: fixed;
   top: 20px;
-  /* Відступ від верхнього краю */
   right: 20px;
-  /* Фіксований відступ з правого боку */
-  width: 180px;
-  /* Зменшена ширина */
-  background-color: white;
-  padding: 15px;
-  /* Зменшений внутрішній відступ */
+  width: 130px;
+  /* Квадратний розмір */
+  /* Квадратний розмір */
+  background-color: #a5b3aabd;
+  padding: 5px;
+  /* Мінімальний внутрішній відступ */
   border-radius: 8px;
-  /* Менша закругленість кутів */
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+  /* Сховати надлишок, якщо текст не вміщується */
+  z-index: 10;
+  /* Встановити порядок накладання */
 }
 
 .h2sun {
-  margin-bottom: 10px;
-  /* Менший відступ */
+  margin-bottom: 5px;
+  /* Зменшений відступ */
   font-size: 15px;
-  /* Зменшений шрифт */
+  /* Ще менший шрифт */
 }
 
 #username {
-  padding: 6px;
-  /* Менший внутрішній відступ */
-  font-size: 12px;
-  /* Зменшений шрифт */
-  margin-bottom: 8px;
+  padding: 4px;
+  font-size: 10px;
+  margin-bottom: 5px;
   width: 90%;
-  border: 1.5px solid #95be52;
-  /* Тонший бордер */
+  border: 1px solid #95be52;
+  /* Зробити бордер тоншим */
   border-radius: 4px;
-  /* Менша закругленість */
 }
 
 .sunbtn {
-  padding: 6px 10px;
-  /* Зменшений розмір кнопки */
-  font-size: 12px;
-  /* Зменшений шрифт */
-  background-color: #4caf50;
+  padding: 4px 6px;
+  font-size: 10px;
+  background-color: var(--color-secondary-dark);
   color: white;
   border: none;
   border-radius: 4px;
-  /* Менша закругленість */
   cursor: pointer;
-  margin-top: 8px;
-  /* Менший відступ зверху */
+  margin-top: 5px;
 }
 
 .sunbtn:hover {
@@ -702,10 +690,8 @@ button {
 }
 
 .countersun {
-  font-size: 14px;
-  /* Зменшений шрифт */
-  margin-top: 8px;
-  /* Менший відступ зверху */
+  font-size: 10px;
+  margin-top: 5px;
 }
 /* fireflies */
 .container-fir {
