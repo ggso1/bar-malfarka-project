@@ -128,44 +128,37 @@ const data = [
 ]
 
 
-// Функція для зміни значення лічильника
-function changeValue(inputId, delta) {
-  const input = document.getElementById(inputId);
-  let currentValue = parseInt(input.value);
-  currentValue += delta;
-
-  if (currentValue < 1) currentValue = 3;
-  if (currentValue > 3) currentValue = 1;
-
-  input.value = currentValue;
-}
-
+// Ініціалізація значення лічильника при завантаженні сторінки
 window.onload = function () {
-  // Перевіряємо, чи є вже значення в localStorage, якщо ні — ініціалізуємо
   if (!localStorage.getItem('counter')) {
     localStorage.setItem('counter', 0);
   }
-  document.getElementById("counter").innerText = localStorage.getItem('counter');
-
-  // Запуск інтервалу для додавання 5 сонечок кожні 20 секунд
-  setInterval(addSonechka, 20000);
+  updateCounterDisplay();
+  setInterval(addSonechka, 20000); // Додаємо 5 сонечок кожні 20 секунд
 };
 
-// Функція для додавання 5 сонечок до лічильника
-function addSonechka() {
-  let currentValue = parseInt(localStorage.getItem('counter') || '0'); // Отримуємо поточний баланс
-  currentValue += 5; // Додаємо 5 сонечок
-  localStorage.setItem('counter', currentValue.toString()); // Оновлюємо значення в localStorage
-  updateCounterDisplay(); // Оновлюємо відображення на сторінці
-}
-// Оновлення значення лічильника на сторінці
-function updateCounterDisplay() {
-  const counterElement = document.getElementById("counter");
-  if (counterElement) {
-    counterElement.innerText = localStorage.getItem('counter');
+// Функція підтвердження введеного імені
+function confirmName() {
+  const username = document.getElementById('username').value.trim();
+  if (username) {
+    alert(`Вітаємо, ${username}!`);
+    addSonechka(); // Додати сонечка після підтвердження імені
   } else {
-    console.error('Елемент #counter не знайдено на сторінці.');
+    alert("Будь ласка, введіть ім'я!");
   }
+}
+
+// Функція для додавання 5 сонечок
+function addSonechka() {
+  let currentValue = parseInt(localStorage.getItem('counter')) || 0;
+  currentValue += 5;
+  localStorage.setItem('counter', currentValue);
+  updateCounterDisplay();
+}
+
+// Оновлення відображення лічильника на сторінці
+function updateCounterDisplay() {
+  document.getElementById("counter").innerText = localStorage.getItem('counter');
 }
 
 
@@ -183,6 +176,34 @@ function mix() {
     alert("Недостатньо ☀️ для замовлення цієї мішанки!");
   }
 }
+
+// Функція для зміни значення у полі введення
+function changeValue(id, delta) {
+  const input = document.getElementById(id);
+  let currentValue = parseInt(input.value) || 0; // Отримуємо поточне значення
+  currentValue += delta; // Змінюємо значення на +1 або -1
+
+  // Перевірка, щоб значення не виходило за межі 1, 2 або 3
+  if (currentValue < 1) {
+    currentValue = 1;
+  } else if (currentValue > 3) {
+    currentValue = 3;
+  }
+
+  input.value = currentValue; // Оновлюємо значення в полі введення
+}
+
+// Функція для валідації введеного значення
+function validateInput(id) {
+  const input = document.getElementById(id);
+  let value = input.value;
+
+  // Якщо введене значення не є 1, 2 або 3, то очищаємо поле
+  if (value !== '1' && value !== '2' && value !== '3') {
+    input.value = '';
+  }
+}
+
 
 // Функція для випадкового змішування коктейлю
 function mixRandom() {

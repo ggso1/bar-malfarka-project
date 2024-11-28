@@ -270,7 +270,8 @@ ul {
 
 .chef-photo {
   border-radius: 200px 4px 200px 4px;
-  border: 8px solid #633232;;
+  border: 8px solid #633232;
+  ;
   width: 268px;
   height: 445px;
   top: -46px;
@@ -511,6 +512,8 @@ ul {
 .container-row {
   display: flex;
   padding: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 .people {
@@ -561,26 +564,48 @@ ul {
 
 .click-buttons {
   display: flex;
-  align-items: flex-start;
-  font-size: 30px;
+  /* Використання flexbox */
+  gap: 15px;
+  /* Відстань між кнопками */
+  justify-content: center;
+  /* Вирівнювання по центру */
+  flex-wrap: wrap;
+  /* Перенос на новий рядок, якщо потрібно */
 }
 
 .click-buttons button {
   font-size: 30px;
   background-color: #404cc0;
+  /* Початковий колір кнопки */
   color: #d6d9e0;
   border-radius: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  /* Плавний перехід */
 }
 
+.click-buttons button:hover {
+  background-color: rgba(2, 114, 167, 0.938);
+  /* Фіолетовий колір з прозорістю */
+  opacity: 0.8;
+  /* Прозорість при наведенні */
+}
+
+
+
 input[type="text-game"] {
-      width: 35px;
-        text-align: center;
+  width: 35px;
+  text-align: center;
 }
 
 button {
   padding: 5px 10px;
   cursor: pointer;
   font-size: 20px;
+  margin: 5px;
+  /* Додавання зовнішнього відступу */
 }
 
 .png {
@@ -612,60 +637,118 @@ button {
 }
 
 /* Sun */
-#counter-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #cbc7b1;
-  color: #000;
-  padding: 13px 13px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 18px;
-  font-weight: bold;
-  z-index: 1000;
+.bodysun {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  /* Вирівнювання по верхньому краю */
 }
 
+.containersun {
+  position: fixed;
+  top: 20px;
+  /* Відступ від верхнього краю */
+  right: 20px;
+  /* Фіксований відступ з правого боку */
+  width: 180px;
+  /* Зменшена ширина */
+  background-color: white;
+  padding: 15px;
+  /* Зменшений внутрішній відступ */
+  border-radius: 8px;
+  /* Менша закругленість кутів */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.h2sun {
+  margin-bottom: 10px;
+  /* Менший відступ */
+  font-size: 15px;
+  /* Зменшений шрифт */
+}
+
+#username {
+  padding: 6px;
+  /* Менший внутрішній відступ */
+  font-size: 12px;
+  /* Зменшений шрифт */
+  margin-bottom: 8px;
+  width: 90%;
+  border: 1.5px solid #95be52;
+  /* Тонший бордер */
+  border-radius: 4px;
+  /* Менша закругленість */
+}
+
+.sunbtn {
+  padding: 6px 10px;
+  /* Зменшений розмір кнопки */
+  font-size: 12px;
+  /* Зменшений шрифт */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  /* Менша закругленість */
+  cursor: pointer;
+  margin-top: 8px;
+  /* Менший відступ зверху */
+}
+
+.sunbtn:hover {
+  background-color: #45a049;
+}
+
+.countersun {
+  font-size: 14px;
+  /* Зменшений шрифт */
+  margin-top: 8px;
+  /* Менший відступ зверху */
+}
 /* fireflies */
- .container-fir {
-   text-align: center;
-   z-index: 10;
- }
+.container-fir {
+  text-align: center;
+  z-index: 10;
+}
 
- .firefly {
-   position: absolute;
-   background-color: rgba(255, 255, 255, 0.8);
-   border-radius: 50%;
-   opacity: 0;
-   animation: fly 10s infinite ease-in-out;
- }
+.firefly {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  animation: fly 10s infinite ease-in-out;
+}
 
- @keyframes fly {
-   0% {
-     transform: translateY(0) translateX(0);
-     opacity: 0.6;
-   }
+@keyframes fly {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
 
-   25% {
-     transform: translateY(-50px) translateX(100px);
-     opacity: 0.8;
-   }
+  25% {
+    transform: translateY(-50px) translateX(100px);
+    opacity: 0.8;
+  }
 
-   50% {
-     transform: translateY(0) translateX(200px);
-     opacity: 0.6;
-   }
+  50% {
+    transform: translateY(0) translateX(200px);
+    opacity: 0.6;
+  }
 
-   75% {
-     transform: translateY(50px) translateX(300px);
-     opacity: 0.8;
-   }
+  75% {
+    transform: translateY(50px) translateX(300px);
+    opacity: 0.8;
+  }
 
-   100% {
-     transform: translateY(0) translateX(400px);
-     opacity: 0.6;
-   }
- }
+  100% {
+    transform: translateY(0) translateX(400px);
+    opacity: 0.6;
+  }
+}
+
+
 
 /* Footer */
 .footer {
