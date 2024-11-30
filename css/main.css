@@ -70,11 +70,12 @@ ul {
   border: 2px solid var(--color-primary-dark);
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-  color: var(--color-brand-normal-dark);
-  background-color: transparent;
+  color: var(--color-primary-light);
+  background-color: #40992f;
 }
 
 /* Link */
@@ -151,6 +152,25 @@ ul {
 
 .hero-title .accent {
   color: #f5ebebe0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.letter {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Advantages section */
@@ -226,7 +246,7 @@ ul {
   gap: 0px;
   opacity: 0px;
   border-radius: 50%;
-  box-shadow: 12px -5px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px -10px 11px 4px rgba(0, 0, 0, 0.3)
 }
 
 /* Chef section */
@@ -270,13 +290,11 @@ ul {
 
 .chef-photo {
   border-radius: 200px 4px 200px 4px;
-  border: 8px solid #633232;
-  ;
-  width: 268px;
+  box-shadow: -1px 2px 8px 12px #633232;
   height: 445px;
   top: -46px;
   gap: 0px;
-  opacity: 0px;
+  opacity: 1;
 }
 
 .chef-title {
@@ -286,20 +304,34 @@ ul {
 }
 
 /* Formats section */
+.formats-list {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  justify-content: center;
+}
+
+.formats-item {
+  display: none;
+  flex-shrink: 0;
+}
+
+.formats-item.visible {
+  display: block;
+  /* Показувати лише ті, що мають клас "visible" */
+}
+
 .formats-container {
   display: flex;
   align-items: center;
   gap: 32px;
-}
-
-.formats-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .formats-item {
   flex-basis: calc((100% - 40px) / 3);
+  max-width: 100%;
 }
 
 .format-card {
@@ -313,15 +345,35 @@ ul {
 }
 
 .format-card1 {
-  background-image: url("../images/1zilia.PNG");
+  background-image: url("../images/format1.jpg.webp");
 }
 
 .format-card2 {
-  background-image: url("../images/2zilia.PNG");
+  background-image: url("../images/format2.webp");
 }
 
 .format-card3 {
-  background-image: url("../images/3zilia.PNG");
+  background-image: url("../images/format3.jpg");
+}
+
+.format-card4 {
+  background-image: url("../images/4zilia.webp");
+}
+
+.format-card5 {
+  background-image: url("../images/5zilia.webp");
+}
+
+.format-card6 {
+  background-image: url("../images/6zilia.webp");
+}
+
+.resept-title{
+  border-radius: 14px;
+    background-color: #ffffff91;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .format-card:hover {
@@ -330,7 +382,7 @@ ul {
 }
 
 .format-title {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 600;
 }
 
@@ -338,6 +390,12 @@ ul {
   font-size: 16px;
   font-weight: 600;
   color: #1a0e0e;
+  border-radius: 14px;
+  background-color: #ffffff91;
+  padding: 10px;
+  display: inline-block;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+
 }
 
 /* Carousel */
@@ -693,6 +751,7 @@ button {
   font-size: 10px;
   margin-top: 5px;
 }
+
 /* fireflies */
 .container-fir {
   text-align: center;

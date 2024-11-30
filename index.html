@@ -26,12 +26,10 @@
                         <li><a class="link" href="#traditions-section">Наша таверна</a></li>
                         <li><a class="link" href="#chef-section">Мольфари</a></li>
                         <li><a class="link" href="#formats-section">Рецепти</a></li>
-                        
+
                     </ul>
                 </nav>
                 <button class="header_button button modal-btn-open" type="button">Викликати відьму</button>
-                
-
             </div>
         </div>
     </header>
@@ -40,10 +38,11 @@
         <section class="hero-section">
             <div class="container">
                 <h1 class="hero-title">
-                    <span class="accent"> Мольфарка</span>
+                    <span class="accent" id="animated-title"></span>
                 </h1>
             </div>
         </section>
+
         <section class="advantages-section">
             <div class="container">
                 <h2 class="visually-hidden">Наші переваги</h2>
@@ -109,53 +108,83 @@
             <div class="container">
                 <h2 class="format-title section-title centered">Рецепти</h2>
                 <div class="formats-container">
-                    <button class="carousel-button" type="button">
+                    <button class="carousel-button prev" type="button" id="prevButton">
                         <svg class="carousel-arrow" width="16" height="16">
                             <use href="./images/icons.svg#icon-Arrow-1"></use>
                         </svg>
                     </button>
-                    <ul class="formats-list">
+                    <ul class="formats-list" id="formatsList">
                         <li class="formats-item">
                             <article class="format-card format-card1">
-                                <h3 class="format-title1" lang="en">Світанкова сила</h3>
+                                <h3 class="resept-title" lang="en">Світанкова сила</h3>
                                 <div class="format-text">
-                                    <p">Інгредієнти:</p>
-                                        <p>-5 крапель соку лимона <br>
-                                            -3 листочки м’яти<br>
-                                            -щіпка подрібненого імбиру<br>
-                                            -пів склянки крижаної води </p>
-                                        <p>Дія: це зілля заряджає енергією на початку дня та підвищує концентрацію.
-                                            Лимон і
-                                            м'ята тонізують, а імбир покращує
-                                            кровообіг, що дає прилив енергії.
-                                        </p>
+                                    <p>Інгредієнти:</p>
+                                    <p>- 5 крапель соку лимона<br>- 3 листочки м’яти<br>- щіпка подрібненого імбиру<br>-
+                                        пів
+                                        склянки крижаної води</p>
+                                    <p>Дія: заряджає енергією на початку дня та підвищує концентрацію.</p>
                                 </div>
                             </article>
                         </li>
                         <li class="formats-item">
                             <article class="format-card format-card2">
-                                <h3 class="format-title2" lang="en">Зірковий Сон</h3>
+                                <h3 class="resept-title" lang="en">Зірковий Сон</h3>
                                 <div class="format-text">
                                     <p>Інгредієнти:</p>
-                                    <p>-пилок нічної фіалки <br> -крапля чистого меду <br> -щіпка лаванди </p>
-                                    <p>Дія: викликає яскраві, мирні сни та допомагає побачити відповідь на хвилююче
-                                        питання у сновидінні.</p>
+                                    <p>- пилок нічної фіалки<br>- крапля чистого меду<br>- щіпка лаванди</p>
+                                    <p>Дія: викликає яскраві, мирні сни та допомагає побачити відповідь у сновидінні.
+                                    </p>
                                 </div>
                             </article>
                         </li>
                         <li class="formats-item">
-                            <article class="format-card  format-card3">
-                                <h3 class="format-title3" lang="en">Серце Дракона</h3>
+                            <article class="format-card format-card3">
+                                <h3 class="resept-title" lang="en">Серце Дракона</h3>
                                 <div class="format-text">
                                     <p>Інгредієнти:</p>
-                                    <p>-порошок кориці <br> -щіпка червоного перцю <br> -шматочок червоної смородини</p>
-                                    <p>Дія: підвищує витривалість і надає заряд енергії, допомагаючи витримати тривалі
-                                        фізичні навантаження.</p>
+                                    <p>- порошок кориці<br>- щіпка червоного перцю<br>- шматочок червоної смородини</p>
+                                    <p>Дія: підвищує витривалість і додає енергії.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="formats-item">
+                            <article class="format-card format-card4">
+                                <h3 class="resept-title" lang="en">Легенда Місяця</h3>
+                                <div class="format-text">
+                                    <p>Інгредієнти:</p>
+                                    <p>- порошок срібної гвоздики<br>- кілька пелюсток синьої троянди<br>- крапля
+                                        ефірного масла жасмину</p>
+                                    <p>Дія: пробуджує внутрішній спокій, налаштовує на гармонію з природою та відкриває
+                                        доступ до потаємних знань.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="formats-item">
+                            <article class="format-card format-card5">
+                                <h3 class="resept-title" lang="en">Лісова Сила</h3>
+                                <div class="format-text">
+                                    <p>Інгредієнти:</p>
+                                    <p>- подрібнене листя ялини<br>- щіпка м'ятної трави<br>- кілька крапель олії
+                                        чайного дерева</p>
+                                    <p>Дія: відновлює сили, приносить спокій і очищає енергетичне поле, сприяючи зв'язку
+                                        з природною енергією лісу.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="formats-item">
+                            <article class="format-card format-card6">
+                                <h3 class="resept-title" lang="en">Зілля Лісового Шуму</h3>
+                                <div class="format-text">
+                                    <p>Інгредієнти:</p>
+                                    <p>- порошок хвойного дерева (ялиця або сосна)<br>- кілька листочків чебрецю<br>
+                                        - пара крапель масла розмарину</p>
+                                    <p>Дія: зміцнює дух, очищає розум, покращує концентрацію та відновлює енергію,
+                                        наповнюючи серце силою лісових вітрів.</p>
                                 </div>
                             </article>
                         </li>
                     </ul>
-                    <button class="carousel-button next" type="button">
+                    <button class="carousel-button next" type="button" id="nextButton">
                         <svg class="carousel-arrow" width="16" height="16">
                             <use href="./images/icons.svg#icon-Arrow-1"></use>
                         </svg>
@@ -163,6 +192,8 @@
                 </div>
             </div>
         </section>
+
+
         <section class="map-section section" id="map-section">
             <h2 class="footer-masia">Місія розшукування</h2>
             <p class="footer-masiap ">Знайти таверню Мольфарка" на цій загадковій карті :) </p>
@@ -198,7 +229,7 @@
         </section>
 
 
-       
+
 
         <section class="game">
             <div class="coktail">
@@ -213,7 +244,7 @@
                             <button onclick="changeValue('zillia1', 1)">+</button>
                         </div>
                     </div>
-            
+
                     <div>
                         <p class="texpr" for="zillia2">Зілля 2</p>
                         <img class="png" src="./image/2.jfif" alt="">
@@ -223,7 +254,7 @@
                             <button onclick="changeValue('zillia2', 1)">+</button>
                         </div>
                     </div>
-            
+
                     <div>
                         <p class="texpr" for="zillia3">Зілля 3</p>
                         <img class="png" src="./image/3.jfif" alt="">
@@ -242,16 +273,16 @@
                     <div id="image-container">
                         <img id="display-image" src="./img/0.jfif" alt="Image" />
                     </div>
-            
+
                     <div class="info">
                         <h2 id="name">Мішанка</h2>
                         <h3 id="description">Опис</h3>
                         <p id="full_description">Детальний Опис</p>
                         <h3 id="price">Ціна</h3>
                     </div>
-            
+
                 </div>
-            
+
             </div>
         </section>
 
@@ -264,15 +295,14 @@
                         <h2 class="people">Кількість наших магів в групі Telegram </h2>
                         <h2><a href="https://t.me/+BYX5H_16yYY4NmRi" target="_blank">reviews Molfarka</a></h2>
                         <span id="peopleCount"></span>
-        
+
                     </div>
-        
+
                     <div class="feedback-form">
                         <h2>Напишіть своє пророцтво</h2>
                         <form id="feedback-form">
                             <label for="feedback">Ваше мудре слово:</label>
-                            <textarea id="feedback" name="feedback" placeholder="" rows="5"
-                                required></textarea>
+                            <textarea id="feedback" name="feedback" placeholder="" rows="5" required></textarea>
                             <button type="submit" class="sendtg-btn">Надіслати</button>
                         </form>
                         <p id="feedback-sent" class="hidden">Пророцтво успішно надіслано!</p>
@@ -288,12 +318,13 @@
         </section>
 
         <section class="bodysun">
-        <div class="containersun">
-            <h2 class="h2sun">Введіть своє ім'я</h2>
-            <input type="text" id="username" placeholder="Ваше ім'я">
-            <button class="sunbtn" onclick="confirmName()">Підтвердити</button>
-            <p class="countersun">☀️: <span id="counter">0</span></p>
-        </div></section>
+            <div class="containersun">
+                <h2 class="h2sun">Введіть своє ім'я</h2>
+                <input type="text" id="username" placeholder="Ваше ім'я">
+                <button class="sunbtn" onclick="confirmName()">Підтвердити</button>
+                <p class="countersun">☀️: <span id="counter">0</span></p>
+            </div>
+        </section>
 
     </main>
     <footer class="footer">
@@ -386,7 +417,9 @@
 
     <!-- <script src="./js/script.js"></script> -->
 
-    <script src="./js/fireflies.js"></script>
+    <script src="./js/molfarkatitle.js"></script>
+    <script src="./js/resepts.js"></script>
+
 
 </body>
 
