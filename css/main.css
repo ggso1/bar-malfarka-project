@@ -440,11 +440,24 @@ ul {
   margin-bottom: 16px;
 }
 
-.contact-map {
-  flex-shrink: 0;
-  border-radius: 16px;
-  border: none;
+.map-container {
+  position: relative;
+  width: 100%; /* Залишає ширину контейнера адаптивною */
+  max-width: 1500px; /* Максимальна ширина контейнера */
+  height: 500px; /* Висота контейнера */
+  overflow: hidden; /* Запобігає виходу картинки за межі контейнера */
+  border: 2px solid #ccc;
+  background-color: #000; /* Фон для запобігання білих зон */
+  margin: 0 auto; /* Додає автоматичні відступи зліва і справа */
 }
+
+.draggable-image {
+  position: absolute;
+  cursor: grab;
+  user-select: none;  /* Забороняє виділення під час перетягування */
+  transform-origin: center; /* Масштабування відносно центру */
+}
+
 
 /*Mif*/
 .container-mif {
@@ -699,9 +712,8 @@ button {
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 130px;
-  /* Квадратний розмір */
-  /* Квадратний розмір */
+  height: 150px;
+  width: 150px;
   background-color: #a5b3aabd;
   padding: 5px;
   /* Мінімальний внутрішній відступ */
@@ -718,13 +730,13 @@ button {
 .h2sun {
   margin-bottom: 5px;
   /* Зменшений відступ */
-  font-size: 15px;
+  font-size: 17px;
   /* Ще менший шрифт */
 }
 
 #username {
   padding: 4px;
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 5px;
   width: 90%;
   border: 1px solid #95be52;
@@ -734,7 +746,7 @@ button {
 
 .sunbtn {
   padding: 4px 6px;
-  font-size: 10px;
+  font-size: 15px;
   background-color: var(--color-secondary-dark);
   color: white;
   border: none;
@@ -748,7 +760,7 @@ button {
 }
 
 .countersun {
-  font-size: 10px;
+  font-size: 15px;
   margin-top: 5px;
 }
 
