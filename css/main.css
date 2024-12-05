@@ -91,39 +91,113 @@ ul {
 }
 
 /* Header */
+/* Базові стилі */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: 32px;
+  padding-top: 20px;
+  background-color: white;
+  z-index: 1000;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+}
+
+.logo-form {
+  width: 80px;
+  height: auto;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
   flex-grow: 1;
-  gap: 40px;
-}
-
-.logo-form {
-  text-align: left;
-  width: 100px;
-  height: auto;
 }
 
 .header-menu {
   display: flex;
-  justify-content: flex-start;
-  gap: 100px;
-  padding-left: 200px;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
 
+.link {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.header_button {
+  background-color: #6b3e26;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+
+/* Адаптивність для планшетів і мобільних пристроїв */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+
+  .header-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-menu.open {
+    display: flex;
+  } 
+
+  .header_button {
+    width: 80%; /* Широка кнопка для зручності */
+    margin-top: 10px;
+    background-color: #6b3e26;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 
