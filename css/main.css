@@ -196,67 +196,78 @@ ul {
   background-color: var(--color-secondary-dark);
 }
 
+/* Стиль для списку переваг */
 .advantages-list {
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
 
+/* Стиль для пунктів списку */
 .advantages-item {
   color: var(--color-primary-light);
   font-size: 20px;
   font-weight: 300;
+  text-align: center;
+  padding-left: 113px;
+    padding-right: 113px;
+
 }
 
+/* Стиль для заголовку */
 .section-title {
   font-size: 64px;
   font-weight: 900;
   line-height: 1.3;
 }
 
+/* Заголовок по центру */
 .section-title.centered {
   text-align: center;
 }
 
+/* Підкреслення акцентом в заголовку */
 .section-title .accent {
   color: var(--color-brand-normal-dark);
 }
 
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+  .advantages-section {
+    background-color: var(--color-secondary-dark);
+    /* Зміна кольору фону */
+    border-radius: 12px;
+    /* Закруглені краї */
+    padding: 32px 16px;
+    /* Відступи для мобільних */
+    margin-top: 5px;
+    /* Відступ від header */
+  }
+
+  .advantages-list {
+    flex-direction: column;
+    /* Список переваг у стовпчик */
+    align-items: center;
+    /* Центрування елементів */
+    gap: 20px;
+    /* Менший проміжок між елементами */
+  }
+
+  .advantages-item {
+    font-size: 18px;
+    /* Менший розмір шрифту для мобільних */
+    text-align: center;
+    /* Центрування тексту */
+  }
+
+  .section-title {
+    font-size: 32px;
+    /* Менший розмір заголовка для мобільних */
+  }
+}
+
 /* Bar section */
-.traditions-section {
-  padding-top: 96px;
-}
-
-.traditions-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.traditions-content {
-  max-width: 710px;
-
-}
-
-.traditions-title {
-  margin-bottom: 42px;
-}
-
-.traditions-text .brand {
-  color: var(--color-brand-normal);
-  font-weight: 600;
-}
-
-.traditions-text .uppercase {
-  text-transform: uppercase;
-}
-
-.traditions-text:last-child {
-  max-width: 450px;
-}
-
 .molfarka-bar {
-  width: 606px;
   height: 466px;
   top: 894px;
   left: 846px;
@@ -264,6 +275,28 @@ ul {
   opacity: 0px;
   border-radius: 50%;
   box-shadow: 10px -10px 11px 4px rgba(0, 0, 0, 0.3)
+}
+
+.traditions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.traditions-content {
+  max-width: 50%;
+}
+
+.molfarka-bar {
+  max-width: 50%;
+  margin-left: 20px;
+  /* додатковий відступ між текстом та картинкою */
+}
+
+.highlighted-text {
+  color: #ff6347;
+  /* Червоний колір для виділеного тексту (можна змінити на бажаний) */
+  font-weight: bold;
 }
 
 /* Chef section */
