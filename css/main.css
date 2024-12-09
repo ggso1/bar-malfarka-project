@@ -196,24 +196,38 @@ ul {
   background-color: var(--color-secondary-dark);
 }
 
-/* Стиль для списку переваг */
+/* Загальні стилі для списку переваг */
 .advantages-list {
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: row; /* Стандартний напрямок */
+  align-items: flex-start; /* Вирівнювання по початку */
+  gap: 20px;
+  white-space: normal; /* Дозволяє перенос тексту за замовчуванням */
 }
 
 /* Стиль для пунктів списку */
 .advantages-item {
-  color: var(--color-primary-light);
-  font-size: 20px;
-  font-weight: 300;
-  text-align: center;
-  padding-left: 113px;
+    color: var(--color-primary-light);
+    text-align: center;
+    font-weight: 300;
+    padding-left: 113px;
     padding-right: 113px;
-
+    margin: 0 auto; /* Центрування блоку */
+    max-width: 600px; /* Максимальна ширина для тексту */
 }
+
+
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+  .advantages-list {
+    flex-direction: column; /* Вертикальна орієнтація */
+    align-items: center; /* Центрування елементів */
+    gap: 15px;
+    white-space: nowrap; /* Запобігає переносу тексту */
+  }
+}
+
 
 /* Стиль для заголовку */
 .section-title {
