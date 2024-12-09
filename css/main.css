@@ -21,7 +21,10 @@ body {
   font-weight: 400;
   line-height: 1.5;
 }
-canvas { display: block; }
+
+canvas {
+  display: block;
+}
 
 h1,
 h2,
@@ -118,7 +121,7 @@ ul {
 .header-container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
 }
 
 .header-nav {
@@ -129,18 +132,115 @@ ul {
 }
 
 .logo-form {
-  text-align: left;
   width: 100px;
   height: auto;
 }
 
 .header-menu {
   display: flex;
-  justify-content: flex-start;
   gap: 100px;
   padding-left: 200px;
-
 }
+
+/* Стиль бургер-кнопки */
+.burger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  /* Приховано для великих екранів */
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 16px;
+  /* Відступ під логотипом */
+}
+
+.burger-button span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-primary-light);
+  transition: 0.3s;
+}
+
+/* Стиль модального меню */
+.modal-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2e7d32;
+  /* Зелений колір */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-menu-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.modal-menu-list li {
+  margin-bottom: 20px;
+}
+
+.modal-menu-list li a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Хрестик для закриття модального меню */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Відображення модального меню */
+.modal-menu.active {
+  display: flex;
+}
+
+/* Медіа-запити для мобільної версії */
+@media (max-width: 768px) {
+  .header-menu {
+    display: none;
+    /* Ховати стандартне меню для мобільних */
+  }
+
+  .burger-button {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+
+  .header-container {
+    align-items: center;
+  }
+
+  .button {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
+
+
+
 
 
 
@@ -199,21 +299,26 @@ ul {
 /* Загальні стилі для списку переваг */
 .advantages-list {
   display: flex;
-  flex-direction: row; /* Стандартний напрямок */
-  align-items: flex-start; /* Вирівнювання по початку */
+  flex-direction: row;
+  /* Стандартний напрямок */
+  align-items: flex-start;
+  /* Вирівнювання по початку */
   gap: 20px;
-  white-space: normal; /* Дозволяє перенос тексту за замовчуванням */
+  white-space: normal;
+  /* Дозволяє перенос тексту за замовчуванням */
 }
 
 /* Стиль для пунктів списку */
 .advantages-item {
-    color: var(--color-primary-light);
-    text-align: center;
-    font-weight: 300;
-    padding-left: 113px;
-    padding-right: 113px;
-    margin: 0 auto; /* Центрування блоку */
-    max-width: 600px; /* Максимальна ширина для тексту */
+  color: var(--color-primary-light);
+  text-align: center;
+  font-weight: 300;
+  padding-left: 113px;
+  padding-right: 113px;
+  margin: 0 auto;
+  /* Центрування блоку */
+  max-width: 600px;
+  /* Максимальна ширина для тексту */
 }
 
 
@@ -221,10 +326,13 @@ ul {
 /* Мобільна версія */
 @media (max-width: 768px) {
   .advantages-list {
-    flex-direction: column; /* Вертикальна орієнтація */
-    align-items: center; /* Центрування елементів */
+    flex-direction: column;
+    /* Вертикальна орієнтація */
+    align-items: center;
+    /* Центрування елементів */
     gap: 15px;
-    white-space: nowrap; /* Запобігає переносу тексту */
+    white-space: nowrap;
+    /* Запобігає переносу тексту */
   }
 }
 
@@ -289,13 +397,14 @@ ul {
   gap: 0px;
   opacity: 0px;
   border-radius: 50%;
-  box-shadow: 10px -10px 11px 4px rgba(0, 0, 0, 0.3)
+  box-shadow: 10px -10px 11px 4px rgba(0, 0, 0, 0.3);
 }
 
 .traditions-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Додаємо, щоб елементи могли адаптуватися */
 }
 
 .traditions-content {
@@ -310,9 +419,73 @@ ul {
 
 .highlighted-text {
   color: #ff6347;
-  /* Червоний колір для виділеного тексту (можна змінити на бажаний) */
   font-weight: bold;
 }
+
+/* Медіа-запити для адаптації */
+
+@media (max-width: 1024px) {
+  .traditions-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .traditions-content {
+    max-width: 80%; /* збільшуємо ширину тексту для кращого вигляду */
+    margin-bottom: 20px; /* додатковий відступ між текстом та картинкою */
+  }
+
+  .molfarka-bar {
+    max-width: 80%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .molfarka-bar {
+    height: 300px; /* зменшуємо висоту картинки на маленьких екранах */
+  }
+
+  .traditions-title {
+    font-size: 1.5rem; /* зменшуємо розмір заголовка */
+  }
+
+  .traditions-text {
+    font-size: 1rem; /* зменшуємо розмір тексту */
+  }
+
+  .highlighted-text {
+    font-size: 1.1rem; /* трохи зменшуємо розмір для виділеного тексту */
+  }
+}
+
+@media (max-width: 480px) {
+  .traditions-container {
+    flex-direction: column;
+    align-items: flex-start; /* вирівнюємо елементи по лівому краю */
+    text-align: left; /* вирівнюємо текст по лівому краю */
+  }
+
+  .traditions-title {
+    font-size: 1.3rem; /* зменшуємо розмір заголовка */
+  }
+
+  .traditions-text {
+    font-size: 0.9rem; /* зменшуємо текст */
+  }
+
+  .highlighted-text {
+    font-size: 1rem; /* зменшуємо розмір виділеного тексту */
+  }
+
+  .molfarka-bar {
+    width: 100%; /* картинка займає всю ширину */
+    height: auto; /* зберігаємо пропорції картинки */
+  }
+}
+
+
 
 /* Chef section */
 .chefs-title {
@@ -345,12 +518,13 @@ ul {
 }
 
 .chef-item {
-  flex-basis: calc((100% - 30px) / 2);
+  flex-basis: calc((100% - 30px) / 2); /* на екранах ширше 768px */
 }
 
 .chef-card {
   display: flex;
   gap: 30px;
+  align-items: center; /* вертикальне вирівнювання */
 }
 
 .chef-photo {
@@ -368,6 +542,106 @@ ul {
   font-weight: 600;
 }
 
+.chef-text {
+  font-size: 1rem;
+}
+
+/* Контейнер для тексту з розмірами 162x273 */
+.chef-text-container {
+  width: 162px;
+  height: 273px;
+  overflow: hidden; /* щоб текст не виходив за межі контейнера */
+  padding: 10px; /* Відступи всередині контейнера */
+}
+
+/* Адаптація для планшетів та менших екранів */
+@media (max-width: 1024px) {
+  .chefs-title {
+    margin-bottom: 40px;
+  }
+
+  .chef-list {
+    gap: 20px 15px;
+  }
+
+  .chef-item {
+    flex-basis: calc((100% - 15px) / 2); /* на планшетах два елементи в ряд */
+  }
+
+  .chef-card {
+    flex-direction: row; /* картинка зліва, текст справа */
+  }
+
+  .chef-photo {
+    height: 350px; /* зменшення висоти фото на планшетах */
+  }
+
+  .chef-title {
+    font-size: 32px; /* зменшення шрифта заголовка */
+  }
+
+  .chef-text {
+    font-size: 1rem; /* зменшення шрифта для тексту */
+  }
+}
+
+/* Адаптація для мобільних екранів */
+@media (max-width: 768px) {
+  .chefs-title {
+    font-size: 24px; /* зменшення шрифта заголовка */
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .chef-list {
+    gap: 15px 10px; /* зменшення відстані між елементами */
+  }
+
+  .chef-item {
+    flex-basis: 100%; /* кожен елемент займає всю ширину */
+  }
+
+  .chef-card {
+    flex-direction: column; /* картинка зліва, текст справа на мобільних */
+    align-items: flex-start; /* вирівнювання контенту по лівому краю */
+    gap: 20px; /* відстань між карткою */
+  }
+
+  .chef-photo {
+    height: 250px; /* зменшення висоти фото на мобільних */
+    top: 0; /* вирівнюємо фото */
+  }
+
+  .chef-title {
+    font-size: 28px; /* зменшення розміру шрифта заголовка */
+  }
+
+  .chef-text {
+    font-size: 0.9rem; /* зменшення розміру тексту */
+  }
+
+  /* Приховати лінії під заголовком на мобільних */
+  .chefs-title::before,
+  .chefs-title::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .chef-title {
+    font-size: 22px; /* ще менший розмір заголовка */
+  }
+
+  .chef-text {
+    font-size: 0.85rem; /* зменшення шрифта для тексту */
+  }
+
+  .chef-photo {
+    height: 200px; /* ще більше зменшення фото */
+  }
+}
+
+
 /* Formats section */
 .formats-list {
   display: flex;
@@ -383,8 +657,8 @@ ul {
 
 .formats-item.visible {
   display: block;
-  /* Показувати лише ті, що мають клас "visible" */
 }
+
 
 .formats-container {
   display: flex;
@@ -433,12 +707,12 @@ ul {
   background-image: url("../images/6zilia.webp");
 }
 
-.resept-title{
+.resept-title {
   border-radius: 14px;
-    background-color: #ffffff91;
-    padding: 10px;
-    display: inline-block;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff91;
+  padding: 10px;
+  display: inline-block;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .format-card:hover {
@@ -507,20 +781,28 @@ ul {
 
 .map-container {
   position: relative;
-  width: 100%; /* Залишає ширину контейнера адаптивною */
-  max-width: 1500px; /* Максимальна ширина контейнера */
-  height: 500px; /* Висота контейнера */
-  overflow: hidden; /* Запобігає виходу картинки за межі контейнера */
+  width: 100%;
+  /* Залишає ширину контейнера адаптивною */
+  max-width: 1500px;
+  /* Максимальна ширина контейнера */
+  height: 500px;
+  /* Висота контейнера */
+  overflow: hidden;
+  /* Запобігає виходу картинки за межі контейнера */
   border: 2px solid #ccc;
-  background-color: #000; /* Фон для запобігання білих зон */
-  margin: 0 auto; /* Додає автоматичні відступи зліва і справа */
+  background-color: #000;
+  /* Фон для запобігання білих зон */
+  margin: 0 auto;
+  /* Додає автоматичні відступи зліва і справа */
 }
 
 .draggable-image {
   position: absolute;
   cursor: grab;
-  user-select: none;  /* Забороняє виділення під час перетягування */
-  transform-origin: center; /* Масштабування відносно центру */
+  user-select: none;
+  /* Забороняє виділення під час перетягування */
+  transform-origin: center;
+  /* Масштабування відносно центру */
 }
 
 

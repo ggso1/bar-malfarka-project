@@ -15,27 +15,40 @@
 </head>
 
 <body>
-<header class="header">
-    <div class="container">
-        <div class="header-container">
-            <nav class="header-nav">
-                <a href="index.html">
-                    <img class="logo-form" src="images/logo.png" alt="logo malfarka">
-                </a>
-                <ul class="header-menu">
-                    <li><a class="link" href="#traditions-section">Наша таверна</a></li>
-                    <li><a class="link" href="#chef-section">Мольфари</a></li>
-                    <li><a class="link" href="#formats-section">Рецепти</a></li>
-
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <nav class="header-nav">
+                    <a href="index.html">
+                        <img class="logo-form" src="images/logo.png" alt="logo malfarka">
+                    </a>
+                    <ul class="header-menu">
+                        <li><a class="link" href="#traditions-section">Наша таверна</a></li>
+                        <li><a class="link" href="#chef-section">Мольфари</a></li>
+                        <li><a class="link" href="#formats-section">Рецепти</a></li>
+                    </ul>
                 </ul>
             </nav>
             <button class="header_button button modal-btn-open" type="button">Викликати відьму</button>
-
-
+                </nav>
+                <!-- Бургер-кнопка -->
+                <button class="burger-button" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
+    </header>
+    <!-- Модальне меню -->
+    <div class="modal-menu">
+        <button class="close-button" type="button">&times;</button>
+        <ul class="modal-menu-list">
+            <li><a class="link" href="#traditions-section">Наша таверна</a></li>
+            <li><a class="link" href="#chef-section">Мольфари</a></li>
+            <li><a class="link" href="#formats-section">Рецепти</a></li>
+        </ul>
     </div>
-</header>
-
     <main>
         <section class="hero-section">
             <div class="container">
@@ -55,6 +68,8 @@
                 </ul>
             </div>
         </section>
+
+
         
     <section class="traditions-section section" id="traditions-section">
         <div class="container">
@@ -75,6 +90,7 @@
             </div>
         </div>
     </section>
+
 
         <section class="section" id="chef-section">
             <div class="container">
@@ -108,6 +124,8 @@
                 </ul>
             </div>
         </section>
+
+        
         <section class="section" id="formats-section">
             <div class="container">
                 <h2 class="format-title section-title centered">Рецепти</h2>
