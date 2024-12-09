@@ -198,9 +198,10 @@ ul {
 
 /* Стиль для списку переваг */
 .advantages-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
 }
 
 /* Стиль для пунктів списку */
