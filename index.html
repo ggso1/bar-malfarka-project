@@ -15,59 +15,56 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-container">
-                <nav class="header-nav">
-                    <a href="index.html">
-                        <img class="logo-form" src="images/logo.png" alt="logo malfarka">
-                    </a>
-                    <ul class="header-menu">
-                        <li><a class="link" href="#traditions-section">Наша таверна</a></li>
-                        <li><a class="link" href="#chef-section">Мольфари</a></li>
-                        <li><a class="link" href="#formats-section">Рецепти</a></li>
-                    </ul>
+<header class="header">
+    <div class="container">
+        <div class="header-container">
+            <nav class="header-nav" aria-label="Главное меню">
+                <a href="index.html" class="logo-link">
+                    <img class="logo-form" src="images/logo.png" alt="Логотип Мольфарка">
+                </a>
+                <ul class="header-menu">
+                    <li><a class="link" href="#traditions-section">Наша таверна</a></li>
+                    <li><a class="link" href="#chef-section">Мольфари</a></li>
+                    <li><a class="link" href="#formats-section">Рецепти</a></li>
                 </ul>
             </nav>
             <button class="header_button button modal-btn-open" type="button">Викликати відьму</button>
-                </nav>
-                <!-- Бургер-кнопка -->
-                <button class="burger-button" type="button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <button class="burger-button" type="button" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
-    <!-- Модальне меню -->
-    <div class="modal-menu">
-        <button class="close-button" type="button">&times;</button>
-        <ul class="modal-menu-list">
-            <li><a class="link" href="#traditions-section">Наша таверна</a></li>
-            <li><a class="link" href="#chef-section">Мольфари</a></li>
-            <li><a class="link" href="#formats-section">Рецепти</a></li>
-        </ul>
     </div>
-    <main>
-        <section class="hero-section">
-            <div class="container">
-              <h1 class="hero-title">
-                <span class="accent" id="animated-title"></span>
-              </h1>
-            </div>
-          </section>
+</header>
 
-        <section class="advantages-section">
-            <div class="advantages-container">
-                <h2 class="visually-hidden">Наші переваги</h2>
-                <ul class="advantages-list" data-aos="fade-up" data-aos-duration="800">
-                    <li class="advantages-item">Популярні зілля</li>
-                    <li class="advantages-item">Доступні за бюджетом напої</li>
-                    <li class="advantages-item">Досвідчені Мольфари</li>
-                </ul>
-            </div>
-        </section>
+<div class="modal-menu" aria-hidden="true">
+    <button class="close-button" type="button" aria-label="Закрыть меню">&times;</button>
+    <ul class="modal-menu-list">
+        <li><a class="link" href="#traditions-section">Наша таверна</a></li>
+        <li><a class="link" href="#chef-section">Мольфари</a></li>
+        <li><a class="link" href="#formats-section">Рецепти</a></li>
+    </ul>
+</div>
+
+<main>
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title"><span class="accent">Мольфарка</span></h1>
+        </div>
+    </section>
+
+    <section class="advantages-section">
+        <div class="advantages-container">
+            <h2 class="section-title visually-hidden">Наші переваги</h2>
+            <ul class="advantages-list" data-aos="fade-up" data-aos-duration="800">
+                <li class="advantages-item">Популярні зілля</li>
+                <li class="advantages-item">Доступні за бюджетом напої</li>
+                <li class="advantages-item">Досвідчені Мольфари</li>
+            </ul>
+        </div>
+    </section>
+</main>
 
 
         

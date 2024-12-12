@@ -1,14 +1,24 @@
-// Отримання елементів
-const burgerButton = document.querySelector('.burger-button');
-const modalMenu = document.querySelector('.modal-menu');
-const closeButton = document.querySelector('.close-button');
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerButton = document.querySelector('.burger-button');
+  const modalMenu = document.querySelector('.modal-menu');
+  const closeButton = document.querySelector('.close-button');
 
-// Відкрити модальне меню
-burgerButton.addEventListener('click', () => {
-  modalMenu.classList.add('active'); // Показуємо модальне меню
+  burgerButton.addEventListener('click', () => {
+    modalMenu.classList.add('active');
+    modalMenu.setAttribute('aria-hidden', 'false');
+  });
+
+  closeButton.addEventListener('click', () => {
+    modalMenu.classList.remove('active');
+    modalMenu.setAttribute('aria-hidden', 'true');
+  });
+
+  // Закрытие меню при клике вне его
+  document.addEventListener('click', (e) => {
+    if (!modalMenu.contains(e.target) && !burgerButton.contains(e.target)) {
+      modalMenu.classList.remove('active');
+      modalMenu.setAttribute('aria-hidden', 'true');
+    }
+  });
 });
 
-// Закрити модальне меню
-closeButton.addEventListener('click', () => {
-  modalMenu.classList.remove('active'); // Ховаємо модальне меню
-});
