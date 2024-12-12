@@ -44,6 +44,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex
 }
 
 .visually-hidden {
@@ -294,6 +295,7 @@ ul {
 .advantages-section {
   padding: 16px 0;
   background-color: var(--color-secondary-dark);
+  
 }
 
 
@@ -305,9 +307,8 @@ ul {
   padding-left: 113px;
   padding-right: 113px;
   margin: 0 auto;
-  /* Центрування блоку */
   max-width: 600px;
-  /* Максимальна ширина для тексту */
+
 }
 
 
@@ -319,21 +320,9 @@ ul {
     justify-content: center;
     text-align: center;
     white-space: nowrap;
-  }
+  }}
 
-  .advantages-list>* {
-    white-space: nowrap;
-    /* Заборона переносу тексту */
-    overflow: visible;
-    /* Дозволяє показувати весь текст */
-    text-overflow: clip;
-    /* Вимикає три крапки */
-    font-size: calc(16px + 0.5vw);
-    /* Динамічний розмір шрифту */
-    text-align: center;
-    /* Текст вирівняний по центру */
-  }
-}
+ 
 
 
 /* Стиль для заголовку */
