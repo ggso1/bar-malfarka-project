@@ -296,17 +296,6 @@ ul {
   background-color: var(--color-secondary-dark);
 }
 
-/* Загальні стилі для списку переваг */
-.advantages-list {
-  display: flex;
-  flex-direction: row;
-  /* Стандартний напрямок */
-  align-items: flex-start;
-  /* Вирівнювання по початку */
-  gap: 20px;
-  white-space: normal;
-  /* Дозволяє перенос тексту за замовчуванням */
-}
 
 /* Стиль для пунктів списку */
 .advantages-item {
@@ -326,13 +315,23 @@ ul {
 /* Мобільна версія */
 @media (max-width: 768px) {
   .advantages-list {
-    flex-direction: column;
-    /* Вертикальна орієнтація */
-    align-items: center;
-    /* Центрування елементів */
-    gap: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     white-space: nowrap;
-    /* Запобігає переносу тексту */
+  }
+
+  .advantages-list>* {
+    white-space: nowrap;
+    /* Заборона переносу тексту */
+    overflow: visible;
+    /* Дозволяє показувати весь текст */
+    text-overflow: clip;
+    /* Вимикає три крапки */
+    font-size: calc(16px + 0.5vw);
+    /* Динамічний розмір шрифту */
+    text-align: center;
+    /* Текст вирівняний по центру */
   }
 }
 
@@ -404,7 +403,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Додаємо, щоб елементи могли адаптуватися */
+  flex-wrap: wrap;
+  /* Додаємо, щоб елементи могли адаптуватися */
 }
 
 .traditions-content {
@@ -432,8 +432,10 @@ ul {
   }
 
   .traditions-content {
-    max-width: 80%; /* збільшуємо ширину тексту для кращого вигляду */
-    margin-bottom: 20px; /* додатковий відступ між текстом та картинкою */
+    max-width: 80%;
+    /* збільшуємо ширину тексту для кращого вигляду */
+    margin-bottom: 20px;
+    /* додатковий відступ між текстом та картинкою */
   }
 
   .molfarka-bar {
@@ -444,44 +446,55 @@ ul {
 
 @media (max-width: 768px) {
   .molfarka-bar {
-    height: 300px; /* зменшуємо висоту картинки на маленьких екранах */
+    height: 300px;
+    /* зменшуємо висоту картинки на маленьких екранах */
   }
 
   .traditions-title {
-    font-size: 1.5rem; /* зменшуємо розмір заголовка */
+    font-size: 1.5rem;
+    /* зменшуємо розмір заголовка */
   }
 
   .traditions-text {
-    font-size: 1rem; /* зменшуємо розмір тексту */
+    font-size: 1rem;
+    /* зменшуємо розмір тексту */
   }
 
   .highlighted-text {
-    font-size: 1.1rem; /* трохи зменшуємо розмір для виділеного тексту */
+    font-size: 1.1rem;
+    /* трохи зменшуємо розмір для виділеного тексту */
   }
 }
 
 @media (max-width: 480px) {
   .traditions-container {
     flex-direction: column;
-    align-items: flex-start; /* вирівнюємо елементи по лівому краю */
-    text-align: left; /* вирівнюємо текст по лівому краю */
+    align-items: flex-start;
+    /* вирівнюємо елементи по лівому краю */
+    text-align: left;
+    /* вирівнюємо текст по лівому краю */
   }
 
   .traditions-title {
-    font-size: 1.3rem; /* зменшуємо розмір заголовка */
+    font-size: 1.3rem;
+    /* зменшуємо розмір заголовка */
   }
 
   .traditions-text {
-    font-size: 0.9rem; /* зменшуємо текст */
+    font-size: 0.9rem;
+    /* зменшуємо текст */
   }
 
   .highlighted-text {
-    font-size: 1rem; /* зменшуємо розмір виділеного тексту */
+    font-size: 1rem;
+    /* зменшуємо розмір виділеного тексту */
   }
 
   .molfarka-bar {
-    width: 100%; /* картинка займає всю ширину */
-    height: auto; /* зберігаємо пропорції картинки */
+    width: 100%;
+    /* картинка займає всю ширину */
+    height: auto;
+    /* зберігаємо пропорції картинки */
   }
 }
 
@@ -518,13 +531,15 @@ ul {
 }
 
 .chef-item {
-  flex-basis: calc((100% - 30px) / 2); /* на екранах ширше 768px */
+  flex-basis: calc((100% - 30px) / 2);
+  /* на екранах ширше 768px */
 }
 
 .chef-card {
   display: flex;
   gap: 30px;
-  align-items: center; /* вертикальне вирівнювання */
+  align-items: center;
+  /* вертикальне вирівнювання */
 }
 
 .chef-photo {
@@ -550,8 +565,10 @@ ul {
 .chef-text-container {
   width: 162px;
   height: 273px;
-  overflow: hidden; /* щоб текст не виходив за межі контейнера */
-  padding: 10px; /* Відступи всередині контейнера */
+  overflow: hidden;
+  /* щоб текст не виходив за межі контейнера */
+  padding: 10px;
+  /* Відступи всередині контейнера */
 }
 
 /* Адаптація для планшетів та менших екранів */
@@ -565,59 +582,74 @@ ul {
   }
 
   .chef-item {
-    flex-basis: calc((100% - 15px) / 2); /* на планшетах два елементи в ряд */
+    flex-basis: calc((100% - 15px) / 2);
+    /* на планшетах два елементи в ряд */
   }
 
   .chef-card {
-    flex-direction: row; /* картинка зліва, текст справа */
+    flex-direction: row;
+    /* картинка зліва, текст справа */
   }
 
   .chef-photo {
-    height: 350px; /* зменшення висоти фото на планшетах */
+    height: 350px;
+    /* зменшення висоти фото на планшетах */
   }
 
   .chef-title {
-    font-size: 32px; /* зменшення шрифта заголовка */
+    font-size: 32px;
+    /* зменшення шрифта заголовка */
   }
 
   .chef-text {
-    font-size: 1rem; /* зменшення шрифта для тексту */
+    font-size: 1rem;
+    /* зменшення шрифта для тексту */
   }
 }
 
 /* Адаптація для мобільних екранів */
 @media (max-width: 768px) {
   .chefs-title {
-    font-size: 24px; /* зменшення шрифта заголовка */
+    font-size: 24px;
+    /* зменшення шрифта заголовка */
     margin-bottom: 30px;
     text-align: center;
   }
 
   .chef-list {
-    gap: 15px 10px; /* зменшення відстані між елементами */
+    gap: 15px 10px;
+    /* зменшення відстані між елементами */
   }
 
   .chef-item {
-    flex-basis: 100%; /* кожен елемент займає всю ширину */
+    flex-basis: 100%;
+    /* кожен елемент займає всю ширину */
   }
 
   .chef-card {
-    flex-direction: column; /* картинка зліва, текст справа на мобільних */
-    align-items: flex-start; /* вирівнювання контенту по лівому краю */
-    gap: 20px; /* відстань між карткою */
+    flex-direction: column;
+    /* картинка зліва, текст справа на мобільних */
+    align-items: flex-start;
+    /* вирівнювання контенту по лівому краю */
+    gap: 20px;
+    /* відстань між карткою */
   }
 
   .chef-photo {
-    height: 250px; /* зменшення висоти фото на мобільних */
-    top: 0; /* вирівнюємо фото */
+    height: 250px;
+    /* зменшення висоти фото на мобільних */
+    top: 0;
+    /* вирівнюємо фото */
   }
 
   .chef-title {
-    font-size: 28px; /* зменшення розміру шрифта заголовка */
+    font-size: 28px;
+    /* зменшення розміру шрифта заголовка */
   }
 
   .chef-text {
-    font-size: 0.9rem; /* зменшення розміру тексту */
+    font-size: 0.9rem;
+    /* зменшення розміру тексту */
   }
 
   /* Приховати лінії під заголовком на мобільних */
@@ -629,15 +661,18 @@ ul {
 
 @media (max-width: 480px) {
   .chef-title {
-    font-size: 22px; /* ще менший розмір заголовка */
+    font-size: 22px;
+    /* ще менший розмір заголовка */
   }
 
   .chef-text {
-    font-size: 0.85rem; /* зменшення шрифта для тексту */
+    font-size: 0.85rem;
+    /* зменшення шрифта для тексту */
   }
 
   .chef-photo {
-    height: 200px; /* ще більше зменшення фото */
+    height: 200px;
+    /* ще більше зменшення фото */
   }
 }
 
@@ -737,6 +772,7 @@ ul {
 
 }
 
+
 /* Carousel */
 .carousel-button {
   display: flex;
@@ -782,7 +818,7 @@ ul {
 .map-container {
   position: relative;
   width: 100%;
-  /* Залишає ширину контейнера адаптивною */
+  /* Ширина контейнера адаптивна */
   max-width: 1500px;
   /* Максимальна ширина контейнера */
   height: 500px;
@@ -791,19 +827,39 @@ ul {
   /* Запобігає виходу картинки за межі контейнера */
   border: 2px solid #ccc;
   background-color: #000;
-  /* Фон для запобігання білих зон */
   margin: 0 auto;
-  /* Додає автоматичні відступи зліва і справа */
+  /* Центрує контейнер по горизонталі */
 }
 
-.draggable-image {
-  position: absolute;
-  cursor: grab;
-  user-select: none;
-  /* Забороняє виділення під час перетягування */
-  transform-origin: center;
-  /* Масштабування відносно центру */
+@media (max-width: 1200px) {
+  .map-container {
+    height: 400px;
+    /* Зменшуємо висоту на середніх екранах */
+  }
 }
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+    /* Зменшуємо висоту на мобільних пристроях */
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 250px;
+    /* Ще менша висота на дуже маленьких екранах */
+  }
+
+  iframe {
+    /* Зменшуємо ширину iframe для мобільних пристроїв */
+    height: 100%;
+    width: 100%;
+    
+  }
+}
+
+
 
 
 /*Mif*/
@@ -812,35 +868,101 @@ ul {
   justify-content: space-between;
   gap: 40px;
   margin: 90px;
+  align-items: center;
+  /* Вирівнює текст і картинку по вертикалі */
 }
 
 .mif-us {
   margin-left: 20px;
-
 }
 
 .background-mif {
-  margin-bottom: 100px;
   width: 350px;
   height: 290px;
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  object-fit: cover;
+  /* Запобігає спотворенню зображення */
 }
 
 .telegram {
   display: flex;
-
 }
 
 .telegram :first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 #peopleCount {
   font-size: 60px;
+}
+
+/* Медіа-запити для адаптації */
+@media (max-width: 1200px) {
+  .container-mif {
+    flex-direction: column;
+    margin: 50px;
+    gap: 20px;
+  }
+
+  .background-mif {
+    width: 300px;
+    height: 240px;
+  }
+
+  .mif-us,
+  .maf-us {
+    font-size: 16px;
+  }
+
+  #peopleCount {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-mif {
+    margin: 30px;
+    gap: 15px;
+  }
+
+  .background-mif {
+    width: 250px;
+    height: 200px;
+  }
+
+  .mif-us,
+  .maf-us {
+    font-size: 14px;
+  }
+
+  #peopleCount {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-mif {
+    margin: 20px;
+    gap: 10px;
+  }
+
+  .background-mif {
+    width: 200px;
+    height: 160px;
+  }
+
+  .mif-us,
+  .maf-us {
+    font-size: 12px;
+  }
+
+  #peopleCount {
+    font-size: 30px;
+  }
 }
 
 /* Hmagic */
@@ -1177,19 +1299,18 @@ button {
   width: 180px;
   height: 120px;
   left: 0;
-  /* background-image: url("../images/bread1.png"); */
 }
 
 .footer::after {
   width: 305px;
   height: 180px;
   right: 0;
-  /* background-image: url("../images/bread2.png"); */
 }
 
 .footer-container {
   display: flex;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .footer-nav,
@@ -1199,14 +1320,21 @@ button {
   gap: 20px;
 }
 
-.footer-logo,
+.footer-logo {
+  margin-bottom: 10px;
+}
+
 .footer-menu {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .address-list,
 .address-info {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .address-link {
@@ -1228,6 +1356,87 @@ button {
   font-size: 14px;
 }
 
+/* Адаптація для планшетів та мобільних пристроїв */
+@media (max-width: 1024px) {
+
+  .footer-nav,
+  .footer-address {
+    flex-basis: 100%;
+    gap: 10px;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .footer-menu,
+  .address-list {
+    gap: 10px;
+  }
+
+  .footer-logo img {
+    max-width: 150px;
+    /* Зменшення логотипу для планшетів */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .footer-nav,
+  .footer-address {
+    flex-basis: 100%;
+  }
+
+  .footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-menu {
+    text-align: center;
+    gap: 10px;
+  }
+
+  .address-list {
+    text-align: center;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+    /* Зменшення логотипу для мобільних пристроїв */
+  }
+
+  .address-info {
+    text-align: center;
+  }
+
+  .address-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo img {
+    max-width: 100px;
+    /* Додаткове зменшення логотипу для маленьких екранів */
+  }
+
+  .footer-menu {
+    gap: 10px;
+  }
+
+  .address-link {
+    font-size: 12px;
+  }
+
+  .address-copyright {
+    font-size: 12px;
+  }
+}
 /* Modal */
 .backdrop {
   position: fixed;
