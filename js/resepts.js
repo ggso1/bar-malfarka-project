@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = document.getElementById("prevButton");
     const nextButton = document.getElementById("nextButton");
     const formats = document.querySelectorAll(".formats-item");
-    const visibleCount = 3; // Кількість видимих елементів
+    let visibleCount = 3; // Кількість видимих елементів на великих екранах
     let currentIndex = 0;
 
     // Функція для оновлення видимості карток
     function updateVisibleItems() {
         formats.forEach((item, index) => {
-            // Додаємо клас "visible" тільки для перших трьох елементів
+            // Видимі елементи залежно від currentIndex та visibleCount
             if (index >= currentIndex && index < currentIndex + visibleCount) {
                 item.classList.add("visible");
             } else {
@@ -18,11 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Функція для оновлення зсуву каруселі
+    // Функція для оновлення стану кнопок
     function updateCarousel() {
-        // Блокуємо кнопки, якщо гортати більше не можна
         prevButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex >= formats.length - visibleCount;
+    }
+
+    // Функція для адаптації до розміру екрана
+    function handleResize() {
+        const screenWidth = window.innerWidth;
+        visibleCount = screenWidth <= 768 ? 1 : 3; // Один елемент на мобільних, три — на великих
+        currentIndex = Math.min(currentIndex, formats.length - visibleCount); // Коригуємо індекс
+        updateVisibleItems();
+        updateCarousel();
     }
 
     // Обробники подій для кнопок
@@ -42,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Слухаємо зміну розміру вікна
+    window.addEventListener("resize", handleResize);
+
     // Початкове відображення
-    updateVisibleItems();
-    updateCarousel();
+    handleResize();
 });
