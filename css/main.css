@@ -1694,4 +1694,70 @@ button {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .modal {
+    padding: 50px;
+    width: 90%;
+  }
+
+  .modalh2{
+    font-size: 25px;
+  }
+
+  .modalp{
+    font-size: 10px;
+  }
+
+  .modal-btn-close {
+    font-size: 40px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .form-input {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .form-button {
+    padding: 14px;
+    width: 100%;
+  }
+
+  .form-terms {
+    font-size: 14px;
+  }
+}
+
+/* Медіа-запит для мобільних пристроїв (до 480px) */
+@media (max-width: 480px) {
+  .modal {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .modal-btn-close {
+    font-size: 35px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .form-input {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .form-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .form-terms {
+    font-size: 12px;
+  }
+
+  .footer-masia, .footer-masiap {
+    font-size: 12px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
