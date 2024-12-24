@@ -39,12 +39,15 @@
 </header>
 
 <div class="modal-menu" aria-hidden="true">
-    <button class="close-button" type="button" aria-label="Закрыть меню">&times;</button>
+    <img src="./images/logo.png" alt="Logo" class="logo">
     <ul class="modal-menu-list">
         <li><a class="link" href="#traditions-section">Наша таверна</a></li>
         <li><a class="link" href="#chef-section">Мольфари</a></li>
         <li><a class="link" href="#formats-section">Рецепти</a></li>
     </ul>
+    <button class="close-button">X</button>
+
+    <img src="./image/1.jfif" alt="Image" class="bottom-right-image">
 </div>
 
 <main>
@@ -344,12 +347,15 @@
 
         <section class="bodysun">
             <div class="containersun">
+              <button class="togglebtn" onclick="toggleForm()">➕</button>
+              <div class="form-container" id="formContainer">
                 <h2 class="h2sun">Введіть своє ім'я</h2>
                 <input type="text" id="username" placeholder="Ваше ім'я">
                 <button class="sunbtn" onclick="confirmName()">Підтвердити</button>
-                <p class="countersun">☀️: <span id="counter">0</span></p>
+              </div>
+              <p class="countersun">☀️: <span id="counter">0</span></p>
             </div>
-        </section>
+          </section>
 
     </main>
     <footer class="footer">
@@ -439,7 +445,7 @@
 
     <!-- <script src="./js/script.js"></script> -->
 
-    <script src="./js/molfarkatitle.js"></script>
+    <script src="./js/containersun.js"></script>
     <script src="./js/resepts.js"></script>
     <script src="./js/adapt.js"></script>
     <script src="./js/burger.js"></script>
