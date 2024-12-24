@@ -177,13 +177,10 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #2e7d32;
-  /* Зелений колір */
+  background-color: #000000;
   display: none;
-  align-items: flex-start;
-  /* Вирівнюємо елементи по лівому краю */
+  align-items: flex-start; 
   justify-content: flex-start;
-  /* Вирівнюємо елементи по верхньому краю */
   z-index: 1000;
   padding: 20px;
 }
@@ -367,22 +364,16 @@ ul {
 @media (max-width: 768px) {
   .advantages-section {
     background-color: var(--color-secondary-dark);
-    /* Зміна кольору фону */
     border-radius: 12px;
-    /* Закруглені краї */
     padding: 32px 16px;
-    /* Відступи для мобільних */
     margin-top: 5px;
-    /* Відступ від header */
   }
 
   .advantages-list {
-    flex-direction: column;
-    /* Список переваг у стовпчик */
-    align-items: center;
-    /* Центрування елементів */
-    gap: 20px;
-    /* Менший проміжок між елементами */
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
   }
 
   .advantages-item {
@@ -549,7 +540,7 @@ ul {
   display: flex;
   gap: 30px;
   align-items: center;
-  /* вертикальне вирівнювання */
+  
 }
 
 .chef-photo {
@@ -636,14 +627,7 @@ ul {
     /* кожен елемент займає всю ширину */
   }
 
-  .chef-card {
-    flex-direction: column;
-    /* картинка зліва, текст справа на мобільних */
-    align-items: flex-start;
-    /* вирівнювання контенту по лівому краю */
-    gap: 20px;
-    /* відстань між карткою */
-  }
+  
 
   .chef-photo {
     height: 250px;
@@ -781,6 +765,67 @@ ul {
 
 }
 
+@media (max-width: 768px) {
+  .formats-container {
+    gap: 16px; /* Зменшуємо розрив між кнопками і списком */
+  }
+
+  .formats-list {
+    gap: 16px; /* Зменшуємо проміжок між картками */
+  }
+
+  .formats-item {
+    flex-basis: calc((100% - 32px) / 2); /* Показуємо 2 картки в одному рядку */
+  }
+
+  .format-card {
+    height: 400px; /* Зменшуємо висоту картки */
+    padding: 16px; /* Зменшуємо відступи */
+  }
+
+  .format-title {
+    font-size: 32px; /* Менший заголовок */
+  }
+
+  .format-text {
+    font-size: 14px; /* Зменшуємо текст у картках */
+  }
+}
+
+/* === Адаптація для мобільних пристроїв === */
+@media (max-width: 480px) {
+  .formats-container {
+    flex-direction: column; /* Елементи в стовпчик */
+    gap: 12px; /* Менший розрив */
+  }
+
+  .formats-list {
+    gap: 12px; /* Ще менший розрив між картками */
+    flex-wrap: nowrap; /* Залишається горизонтальний скрол */
+  }
+
+  .formats-item {
+    flex-basis: 100%; /* Кожна картка займає 100% ширини */
+  }
+
+  .format-card {
+    height: 350px; /* Автовисота, щоб враховувати контент */
+    padding: 12px; /* Зменшення внутрішніх відступів */
+  }
+
+  .format-title {
+    font-size: 24px; /* Ще менший заголовок */
+  }
+
+  .format-text {
+    font-size: 12px; /* Менший текст */
+  }
+
+  .carousel-button {
+    display: none; /* Ховаємо кнопки, якщо на маленькому екрані горизонтальний скрол */
+  }
+}
+
 
 /* Carousel */
 .carousel-button {
@@ -826,14 +871,13 @@ ul {
 
   .formats-container {
     gap: 8px;
-    /* Зменшено gap між картками */
+    
   }
 
   .carousel-button {
     width: 36px;
     height: 36px;
     margin: 10px 15px;
-    /* Зменшено відступи зліва та справа */
   }
 }
 
@@ -1329,11 +1373,12 @@ button {
   font-size: 12px;
   overflow: hidden;
   z-index: 10;
+  
 }
 
 .togglebtn {
   position: absolute;
-  top: 5px;
+  top: -3px;
   right: 5px;
   background-color: var(--color-secondary-dark);
   color: white;
@@ -1345,7 +1390,7 @@ button {
 }
 
 .togglebtn:hover {
-  background-color: #45a049;
+  background-color: #68a36b;
 }
 
 .form-container {
@@ -1384,7 +1429,7 @@ button {
 
 .countersun {
   font-size: 15px;
-  margin-top: 10px;
+  padding-right: 10px;
 }
 
 @media (max-width: 768px) {
@@ -1552,8 +1597,8 @@ button {
 
 .modal {
   position: relative;
-  max-width: 700px;
-  max-height: 410px;
+  max-width: 100%;
+  max-height: 100%;
   padding: 128px;
   background-color: var(--color-primary-light);
   border-radius: 32px;
@@ -1588,7 +1633,7 @@ button {
 
 .form-input {
   padding: 16px 42px;
-  width: 80%;
+  width: 100%;
   font-size: 16px;
   line-height: 1.17;
   border: 1px solid var(--color-secondary-dark);
