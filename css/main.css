@@ -1358,6 +1358,67 @@ button {
   line-height: 150%;
 }
 
+@media (max-width: 768px) {
+  .game {
+    margin: 20px;
+  }
+
+  .png{
+    width: 170px;
+  }
+
+  .zilia {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+  }
+
+  .zilia > div {
+    width: 90%; /* Ensure they don't stretch too wide */
+    max-width: 250px;
+  }
+
+  .buttons-game {
+    font-size: 30px; /* Adjust button size for smaller screens */
+  }
+
+  #display-image {
+    width: 80%; /* Make the image smaller on smaller screens */
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .click-buttons button {
+    font-size: 25px; /* Smaller buttons on mobile */
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game {
+    margin: 10px;
+  }
+
+  .buttons-game {
+    font-size: 25px; /* Even smaller buttons */
+  }
+
+  .click-buttons button {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  #display-image {
+    width: 100%; /* Make the image fit the screen width */
+  }
+
+  .info {
+    width: 100%;
+    padding-top: 10px;
+  }
+}
+
 /* Sun */
 .containersun {
   position: fixed;
@@ -1554,6 +1615,11 @@ button {
     font-size: 14px;
   }
 }
+
+.hmagic{
+  font-size: 20px;
+}
+
 
 @media (max-width: 480px) {
   .footer-logo img {
