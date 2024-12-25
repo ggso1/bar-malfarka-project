@@ -1129,6 +1129,10 @@ ul {
   box-shadow: 0 0 10px 5px rgba(125, 4, 4, 0.73);
 }
 
+.tglink{
+  font-size: 30px;
+}
+
 .container-row {
   display: flex;
   padding: 50px;
@@ -1148,42 +1152,25 @@ ul {
   margin-top: 20px;
 }
 
-/* Адаптація для планшетів та мобільних пристроїв */
-@media (max-width: 1024px) {
-  .container-row {
+@media (max-width: 768px) {
+  .telegram {
     flex-direction: column;
-    padding: 30px;
+    align-items: center;
+    gap: 20px;
   }
 
-  .tgfoto {
-    width: 150px;
-    height: 150px;
+  .telegram > div:first-child {
+    order: 2; /* Переносить зображення та пов'язані елементи вниз */
   }
 
   .feedback-form {
-    padding-right: 40px;
-    padding-left: 40px;
+    order: 1; /* Піднімає форму наверх */
+    padding: 15px;
   }
 
-  .people {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 18px;
-  }
-
-  .feedback-form button {
-    width: 250px;
-  }
-}
-
-@media (max-width: 768px) {
   .tgfoto {
     width: 120px;
     height: 120px;
-  }
-
-  .feedback-form {
-    padding: 15px;
   }
 
   .feedback-form h2 {
@@ -1205,22 +1192,46 @@ ul {
   .people {
     margin-left: 0;
     margin-right: 0;
-    padding: 10px;
+    font-size: 12px;
+  }
+
+  .tglink {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #peopleCount {
+    font-size: 24px;
+    text-align: center;
   }
 
   .tgsulka {
     font-size: 12px;
   }
+  .hmagic{
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .tgfoto {
-    width: 100px;
-    height: 100px;
+  .telegram {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .telegram > div:first-child {
+    order: 2;
   }
 
   .feedback-form {
+    order: 1;
     padding: 10px;
+  }
+
+  .tgfoto {
+    width: 100px;
+    height: 100px;
   }
 
   .feedback-form h2 {
@@ -1237,6 +1248,21 @@ ul {
 
   .container-row {
     padding: 15px;
+  }
+
+  .people {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .tglink {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #peopleCount {
+    font-size: 20px;
+    text-align: center;
   }
 
   .tgsulka {
@@ -1364,7 +1390,7 @@ button {
   }
 
   .png{
-    width: 170px;
+    width: 150px;
   }
 
   .zilia {
@@ -1585,50 +1611,74 @@ button {
 .address-copyright {
   font-size: 14px;
 }
-
-/* Адаптація для планшетів і мобільних пристроїв */
 @media (max-width: 768px) {
   .footer-container {
+    flex-direction: column;
     align-items: center;
-    /* Центрування всього вмісту */
-    padding: 0 20px;
+    text-align: center;
+    gap: 30px;
   }
 
-  .footer-nav,
-  .footer-address {
-    flex-basis: 100%;
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
 
   .footer-logo {
-    margin-bottom: 20px;
-    text-align: left;
-    align-self: flex-start;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 0; /* Видаляємо зайві відступи */
   }
 
-  .footer-menu,
+  .footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-address {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .address-list {
-    text-align: center;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
   }
 
   .address-link {
     font-size: 14px;
   }
-}
 
-.hmagic{
-  font-size: 20px;
-}
+  .address-copyright {
+    font-size: 12px;
+    text-align: center;
+  }
 
+  .address-icon {
+    margin: 0 auto;
+  }
+}
 
 @media (max-width: 480px) {
+  .footer-container {
+    gap: 10px;
+  }
+
   .footer-logo img {
-    max-width: 100px;
-    /* Додаткове зменшення логотипу */
+    width: 100px; 
+    margin-left: -25px;
   }
 
   .footer-menu {
-    gap: 10px;
+    gap: 6px;
   }
 
   .address-link {
@@ -1636,9 +1686,16 @@ button {
   }
 
   .address-copyright {
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .address-icon {
+    width: 24px;
+    height: 24px;
   }
 }
+
+
 
 /* Modal */
 .backdrop {
