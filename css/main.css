@@ -1613,6 +1613,7 @@ button {
 
   .footer-menu {
     gap: 6px;
+    margin-left: auto;
   }
 
   .address-link {
