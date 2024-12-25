@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalMenu.setAttribute('aria-hidden', 'true');
   });
 
-  // Закрытие меню при клике вне его
   document.addEventListener('click', (e) => {
     if (!modalMenu.contains(e.target) && !burgerButton.contains(e.target)) {
       modalMenu.classList.remove('active');

@@ -1,10 +1,8 @@
-// Ваш токен для бота
-const token = '7643771807:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc';  // Замість цього вставте ваш токен
-// ID чату або групи
-const chatId = '-1002474744467'; // Замість цього вставте username або chat_id групи
+const token = '7643771807:AAFNISXPwKvLSF6VJFwCqjcjhXBA5eALGPc';  
+const chatId = '-1002474744467'; 
 const testGroupID = '-1002472181316'
 
-// URL для запиту до API
+
 const urlPeople = `https://api.telegram.org/bot${token}/getChatMemberCount?chat_id=${chatId}`;
 
 
@@ -29,8 +27,6 @@ function getMemberCount() {
 }
 
 getMemberCount();
-
-
 
 
 

@@ -29,7 +29,6 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
-  /* Убирает горизонтальную прокрутку */
 }
 
 canvas {
@@ -74,8 +73,8 @@ ul {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1200px;
-  text-align: center;
 }
+
 
 /* Button */
 .button {
@@ -119,7 +118,8 @@ ul {
 
 .link:hover {
   color: var(--color-brand-normal);
-}
+}  
+ 
 
 /* Header */
 .header {
@@ -225,7 +225,6 @@ ul {
   top: 20px;
   left: 20px;
   width: 100px;
-  /* Задайте потрібний розмір логотипу */
 }
 
 .bottom-right-image {
@@ -233,9 +232,7 @@ ul {
   bottom: 20px;
   right: 20px;
   width: 150px;
-  /* Задайте потрібний розмір картинки */
 }
-
 
 @media (max-width: 768px) {
   .header-menu {
@@ -261,6 +258,7 @@ ul {
   }
 }
 
+
 /* Hero section */
 .hero-section {
   padding: 272px 0;
@@ -274,7 +272,6 @@ ul {
   color: var(--color-primary-light);
   text-align: center;
   font-size: 48px;
-  /* Базовий розмір для мобільних екранів */
   font-weight: 900;
   font-style: italic;
   line-height: 1.2;
@@ -319,7 +316,8 @@ ul {
   to {
     opacity: 1;
   }
-}
+}  
+ 
 
 /* Advantages section */
 .advantages-section {
@@ -379,16 +377,14 @@ ul {
 
   .advantages-item {
     font-size: 18px;
-    /* Менший розмір шрифту для мобільних */
     text-align: center;
-    /* Центрування тексту */
   }
 
   .section-title {
     font-size: 32px;
-    /* Менший розмір заголовка для мобільних */
   }
 }
+  
 
 /* Bar section */
 .molfarka-bar {
@@ -406,7 +402,6 @@ ul {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  /* Додаємо, щоб елементи могли адаптуватися */
 }
 
 .traditions-content {
@@ -416,7 +411,6 @@ ul {
 .molfarka-bar {
   max-width: 50%;
   margin-left: 20px;
-  /* додатковий відступ між текстом та картинкою */
 }
 
 .highlighted-text {
@@ -425,7 +419,6 @@ ul {
 }
 
 /* Медіа-запити для адаптації */
-
 @media (max-width: 1024px) {
   .traditions-container {
     flex-direction: column;
@@ -435,9 +428,7 @@ ul {
 
   .traditions-content {
     max-width: 80%;
-    /* збільшуємо ширину тексту для кращого вигляду */
     margin-bottom: 20px;
-    /* додатковий відступ між текстом та картинкою */
   }
 
   .molfarka-bar {
@@ -449,22 +440,18 @@ ul {
 @media (max-width: 768px) {
   .molfarka-bar {
     height: 300px;
-    /* зменшуємо висоту картинки на маленьких екранах */
   }
 
   .traditions-title {
     font-size: 1.5rem;
-    /* зменшуємо розмір заголовка */
   }
 
   .traditions-text {
     font-size: 1rem;
-    /* зменшуємо розмір тексту */
   }
 
   .highlighted-text {
     font-size: 1.1rem;
-    /* трохи зменшуємо розмір для виділеного тексту */
   }
 }
 
@@ -472,34 +459,26 @@ ul {
   .traditions-container {
     flex-direction: column;
     align-items: flex-start;
-    /* вирівнюємо елементи по лівому краю */
     text-align: left;
-    /* вирівнюємо текст по лівому краю */
   }
 
   .traditions-title {
     font-size: 1.3rem;
-    /* зменшуємо розмір заголовка */
   }
 
   .traditions-text {
     font-size: 0.9rem;
-    /* зменшуємо текст */
   }
 
   .highlighted-text {
     font-size: 1rem;
-    /* зменшуємо розмір виділеного тексту */
   }
 
   .molfarka-bar {
     width: 100%;
-    /* картинка займає всю ширину */
     height: auto;
-    /* зберігаємо пропорції картинки */
   }
 }
-
 
 
 /* Chef section */
@@ -534,7 +513,6 @@ ul {
 
 .chef-item {
   flex-basis: calc((100% - 30px) / 2);
-  /* на екранах ширше 768px */
 }
 
 .chef-card {
@@ -568,9 +546,7 @@ ul {
   width: 162px;
   height: 273px;
   overflow: hidden;
-  /* щоб текст не виходив за межі контейнера */
   padding: 10px;
-  /* Відступи всередині контейнера */
 }
 
 /* Адаптація для планшетів та менших екранів */
@@ -585,27 +561,22 @@ ul {
 
   .chef-item {
     flex-basis: calc((100% - 15px) / 2);
-    /* на планшетах два елементи в ряд */
   }
 
   .chef-card {
     flex-direction: row;
-    /* картинка зліва, текст справа */
   }
 
   .chef-photo {
     height: 350px;
-    /* зменшення висоти фото на планшетах */
   }
 
   .chef-title {
     font-size: 32px;
-    /* зменшення шрифта заголовка */
   }
 
   .chef-text {
     font-size: 1rem;
-    /* зменшення шрифта для тексту */
   }
 }
 
@@ -613,41 +584,31 @@ ul {
 @media (max-width: 768px) {
   .chefs-title {
     font-size: 24px;
-    /* зменшення шрифта заголовка */
     margin-bottom: 30px;
     text-align: center;
   }
 
   .chef-list {
     gap: 15px 10px;
-    /* зменшення відстані між елементами */
   }
 
   .chef-item {
     flex-basis: 100%;
-    /* кожен елемент займає всю ширину */
   }
-
-  
 
   .chef-photo {
     height: 250px;
-    /* зменшення висоти фото на мобільних */
     top: 0;
-    /* вирівнюємо фото */
   }
 
   .chef-title {
     font-size: 28px;
-    /* зменшення розміру шрифта заголовка */
   }
 
   .chef-text {
     font-size: 0.9rem;
-    /* зменшення розміру тексту */
   }
 
-  /* Приховати лінії під заголовком на мобільних */
   .chefs-title::before,
   .chefs-title::after {
     display: none;
@@ -657,17 +618,14 @@ ul {
 @media (max-width: 480px) {
   .chef-title {
     font-size: 22px;
-    /* ще менший розмір заголовка */
   }
 
   .chef-text {
     font-size: 0.85rem;
-    /* зменшення шрифта для тексту */
   }
 
   .chef-photo {
     height: 200px;
-    /* ще більше зменшення фото */
   }
 }
 
@@ -768,62 +726,62 @@ ul {
 
 @media (max-width: 768px) {
   .formats-container {
-    gap: 16px; /* Зменшуємо розрив між кнопками і списком */
+    gap: 16px; 
   }
 
   .formats-list {
-    gap: 16px; /* Зменшуємо проміжок між картками */
+    gap: 16px; 
   }
 
   .formats-item {
-    flex-basis: calc((100% - 32px) / 2); /* Показуємо 2 картки в одному рядку */
+    flex-basis: calc((100% - 32px) / 2); 
   }
 
   .format-card {
-    height: 400px; /* Зменшуємо висоту картки */
-    padding: 16px; /* Зменшуємо відступи */
+    height: 400px;
+    padding: 16px; 
   }
 
   .format-title {
-    font-size: 32px; /* Менший заголовок */
+    font-size: 32px; 
   }
 
   .format-text {
-    font-size: 14px; /* Зменшуємо текст у картках */
+    font-size: 14px; 
   }
 }
 
 /* === Адаптація для мобільних пристроїв === */
 @media (max-width: 480px) {
   .formats-container {
-    flex-direction: column; /* Елементи в стовпчик */
-    gap: 12px; /* Менший розрив */
+    flex-direction: column; 
+    gap: 12px; 
   }
 
   .formats-list {
-    gap: 12px; /* Ще менший розрив між картками */
-    flex-wrap: nowrap; /* Залишається горизонтальний скрол */
+    gap: 12px;
+    flex-wrap: nowrap; 
   }
 
   .formats-item {
-    flex-basis: 100%; /* Кожна картка займає 100% ширини */
+    flex-basis: 100%; 
   }
 
   .format-card {
-    height: 350px; /* Автовисота, щоб враховувати контент */
-    padding: 12px; /* Зменшення внутрішніх відступів */
+    height: 350px; 
+    padding: 12px; 
   }
 
   .format-title {
-    font-size: 24px; /* Ще менший заголовок */
+    font-size: 24px; 
   }
 
   .format-text {
-    font-size: 12px; /* Менший текст */
+    font-size: 12px; 
   }
 
   .carousel-button {
-    display: none; /* Ховаємо кнопки, якщо на маленькому екрані горизонтальний скрол */
+    display: none;
   }
 }
 
@@ -899,48 +857,37 @@ ul {
 .map-container {
   position: relative;
   width: 100%;
-  /* Ширина контейнера адаптивна */
   max-width: 1500px;
-  /* Максимальна ширина контейнера */
   height: 500px;
-  /* Висота контейнера */
   overflow: hidden;
-  /* Запобігає виходу картинки за межі контейнера */
   border: 2px solid #ccc;
   background-color: #000;
   margin: 0 auto;
-  /* Центрує контейнер по горизонталі */
 }
 
 @media (max-width: 1200px) {
   .map-container {
     height: 400px;
-    /* Зменшуємо висоту на середніх екранах */
   }
 }
 
 @media (max-width: 768px) {
   .map-container {
     height: 300px;
-    /* Зменшуємо висоту на мобільних пристроях */
   }
 }
 
 @media (max-width: 480px) {
   .map-container {
     height: 250px;
-    /* Ще менша висота на дуже маленьких екранах */
   }
 
   iframe {
-    /* Зменшуємо ширину iframe для мобільних пристроїв */
     height: 100%;
     width: 100%;
 
   }
 }
-
-
 
 
 /*Mif*/
@@ -950,7 +897,6 @@ ul {
   gap: 40px;
   margin: 90px;
   align-items: center;
-  /* Вирівнює текст і картинку по вертикалі */
 }
 
 .mif-us {
@@ -963,7 +909,6 @@ ul {
   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   object-fit: cover;
-  /* Запобігає спотворенню зображення */
 }
 
 .telegram {
@@ -1161,11 +1106,11 @@ ul {
   }
 
   .telegram > div:first-child {
-    order: 2; /* Переносить зображення та пов'язані елементи вниз */
+    order: 2; 
   }
 
   .feedback-form {
-    order: 1; /* Піднімає форму наверх */
+    order: 1;
     padding: 15px;
   }
 
@@ -1282,7 +1227,6 @@ ul {
 }
 
 .coktail {
-  /* width: 80%; */
   height: 100hv;
   display: flex;
   flex-direction: column;
@@ -1313,33 +1257,25 @@ ul {
 
 .click-buttons {
   display: flex;
-  /* Використання flexbox */
   gap: 15px;
-  /* Відстань між кнопками */
   justify-content: center;
-  /* Вирівнювання по центру */
   flex-wrap: wrap;
-  /* Перенос на новий рядок, якщо потрібно */
 }
 
 .click-buttons button {
   font-size: 30px;
   background-color: #404cc0;
-  /* Початковий колір кнопки */
   color: #d6d9e0;
   border-radius: 15px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s, opacity 0.3s;
-  /* Плавний перехід */
 }
 
 .click-buttons button:hover {
   background-color: rgba(2, 114, 167, 0.938);
-  /* Фіолетовий колір з прозорістю */
   opacity: 0.8;
-  /* Прозорість при наведенні */
 }
 
 
@@ -1354,7 +1290,6 @@ button {
   cursor: pointer;
   font-size: 20px;
   margin: 5px;
-  /* Додавання зовнішнього відступу */
 }
 
 .png {
@@ -1363,7 +1298,6 @@ button {
 }
 
 .result {
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -1395,21 +1329,21 @@ button {
   }
 
   .zilia {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+    flex-direction: column; 
     align-items: center;
   }
 
   .zilia > div {
-    width: 90%; /* Ensure they don't stretch too wide */
+    width: 90%; 
     max-width: 250px;
   }
 
   .buttons-game {
-    font-size: 30px; /* Adjust button size for smaller screens */
+    font-size: 30px; 
   }
 
   #display-image {
-    width: 80%; /* Make the image smaller on smaller screens */
+    width: 80%; 
   }
 
   .info {
@@ -1417,7 +1351,7 @@ button {
   }
 
   .click-buttons button {
-    font-size: 25px; /* Smaller buttons on mobile */
+    font-size: 25px; 
     padding: 8px 16px;
   }
 }
@@ -1428,7 +1362,7 @@ button {
   }
 
   .buttons-game {
-    font-size: 25px; /* Even smaller buttons */
+    font-size: 25px; 
   }
 
   .click-buttons button {
@@ -1437,7 +1371,7 @@ button {
   }
 
   #display-image {
-    width: 100%; /* Make the image fit the screen width */
+    width: 100%; 
   }
 
   .info {
@@ -1529,8 +1463,6 @@ button {
     display: block;
   }
 }
-
-
 
 
 /* Footer */
@@ -1632,7 +1564,7 @@ button {
     position: absolute;
     top: 20px;
     left: 20px;
-    margin-bottom: 0; /* Видаляємо зайві відступи */
+    margin-bottom: 0; 
   }
 
   .footer-menu {
@@ -1698,7 +1630,6 @@ button {
 }
 
 
-
 /* Modal */
 .backdrop {
   position: fixed;
@@ -1742,8 +1673,8 @@ button {
 
 .modal-btn-close:hover {
   color: red;
-  /* Можна змінити колір при наведенні */
 }
+
 
 /*Form*/
 .form-field {

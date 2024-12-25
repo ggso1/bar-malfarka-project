@@ -1,4 +1,3 @@
-// Робимо функцію toggleForm глобальною
 function toggleForm() {
   const formContainer = document.getElementById('formContainer');
   if (formContainer) {
@@ -14,7 +13,6 @@ function toggleForm() {
   }
 }
 
-// Робимо функцію confirmName глобальною
 function confirmName() {
   const username = document.getElementById('username').value;
   if (username) {
