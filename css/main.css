@@ -1324,6 +1324,10 @@ button {
     margin: 20px;
   }
 
+  .result{
+    flex-direction:column
+  }
+
   .png{
     width: 150px;
   }
