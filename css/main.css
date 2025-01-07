@@ -726,6 +726,8 @@ ul {
 
 @media (max-width: 768px) {
   .formats-container {
+    display: flex;
+    flex-direction: row;
     gap: 16px; 
   }
 
@@ -738,8 +740,7 @@ ul {
   }
 
   .format-card {
-    height: 400px;
-    padding: 16px; 
+    width: 200px;
   }
 
   .format-title {
@@ -754,7 +755,8 @@ ul {
 /* === Адаптація для мобільних пристроїв === */
 @media (max-width: 480px) {
   .formats-container {
-    flex-direction: column; 
+    display: flex;
+    flex-direction: row;
     gap: 12px; 
   }
 
@@ -768,8 +770,7 @@ ul {
   }
 
   .format-card {
-    height: 350px; 
-    padding: 12px; 
+    width: 200px;
   }
 
   .format-title {
@@ -829,6 +830,8 @@ ul {
   }
 
   .formats-container {
+    display: flex;
+    flex-direction: row;
     gap: 8px;
     
   }
