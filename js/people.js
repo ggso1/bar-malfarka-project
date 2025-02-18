@@ -14,7 +14,7 @@ function getMemberCount() {
         .then(data => {
             if (data.ok) {
                 // Вивести кількість учасників
-                console.log(data.result)
+               // console.log(data.result)
                 document.getElementById('peopleCount').textContent = data.result;
             } else {
                 document.getElementById('peopleCount').textContent = 'Помилка при отриманні даних';

@@ -216,14 +216,30 @@
         </section>
 
 
-        <section class="map-section section" id="map-section">
-            <h2 class="footer-masia">Місія розшукування</h2>
-            <p class="footer-masiap ">Знайти таверню Мольфарка" на цій загадковій карті :) <br> Наша таверня одна на все
-                магічне село і має оранжевий дах. <br> Якщо знайшов МОЛОДЕЦЬ😊 </p>
-            <div class="map-container">
+        <section class="" id="game-section">
+            <!-- <h2 class="footer-masia">Місія (супер гра)</h2> -->
+            <!-- <p class="footer-masiap ">Знайти таверню Мольфарка" на цій загадковій карті :) <br> Наша таверня одна на все
+                магічне село і має оранжевий дах. <br> Якщо знайшов МОЛОДЕЦЬ😊 </p> -->
+            <!-- <div class="map-container">
             <iframe src="https://mapgenie.io/hogwarts-legacy/maps/world?embed=light" height="500"
             style="position: relative; width: 100%;"> </iframe>
+            </div> -->
+            <div id="game-container"></div>
+            <div id="leaderboard">
+                <p>Рекорд 🏁:</p>
+                <p id="highscore">0</p>
+                <p>Score 🥨:</p>
+                <p id="score">0</p>
+                <p>Time ⏱:</p>
+                <p id="time">0</p>
+                <p>Lives ❤:</p>
+                <p id="lives">3</p>
             </div>
+        
+            <!-- Підключення Phaser.js -->
+            <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
+            <!-- Підключення скрипта гри -->
+            <script src="js/game.js"></script>
         </section>
 
 

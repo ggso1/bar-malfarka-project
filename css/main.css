@@ -857,6 +857,10 @@ ul {
   margin-bottom: 16px;
 }
 
+#game-section{
+  display: flex;
+  flex-direction: row;
+}
 .map-container {
   position: relative;
   width: 100%;
