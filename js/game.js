@@ -1,3 +1,4 @@
+
 var config = {
     type: Phaser.AUTO,
     width: 1200,
@@ -35,6 +36,7 @@ var timer = 0;
 var lives = 3;
 var timerEvent;
 
+
 function preload() {
     this.load.image('sky', '../assets/13.png');
     this.load.image('ground', '../assets/platform.png');
@@ -43,9 +45,12 @@ function preload() {
     this.load.spritesheet('dude', '../assets/dude1.png', { frameWidth: 32, frameHeight: 48 });
 }
 
+
 function create() {
     this.add.tileSprite(0, 120, worldWidth, 1080, "sky").setOrigin(0, 0);
     this.physics.world.setBounds(0, 0, 800, 600);
+
+    
 
     // Статичні платформи
     platforms = this.physics.add.staticGroup();

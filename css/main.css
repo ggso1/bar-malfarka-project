@@ -896,6 +896,16 @@ ul {
   }
 }
 
+#game-section {
+  display: flex;
+  justify-content: center; /* Центрує весь блок */
+  align-items: center;
+  gap: 20px; /* Відступ між грою і таблицею */
+}
+
+
+
+
 
 /*Mif*/
 .container-mif {
